@@ -1,4 +1,4 @@
-from festival.models import Groupe,Evenement,Sponsor,InformationsPratique,Historique,Lien
+from models import Groupe,Evenement,Sponsor,InformationsPratique,Historique,Lien
 from django.contrib import admin
 
 class GroupeAdmin(admin.ModelAdmin):

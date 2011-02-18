@@ -1,9 +1,0 @@
-{% if utilisateurs %}
-	<ul>
-	{% for user in utilisateurs %}
-		<li> {{ user.prenom }} - {{ user.nom }} </li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>No users..</p>
-{% endif %}
