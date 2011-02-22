@@ -1,4 +1,4 @@
-# Django settings for fanfarFolizz project.
+# Django settings for fanfar-folizz project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/ginside/fanfarFolizz/media'
+MEDIA_ROOT = '/home/ginside/fanfar-folizz/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -75,7 +75,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'fanfarFolizz.urls'
+ROOT_URLCONF = 'fanfar-folizz.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
