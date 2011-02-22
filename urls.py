@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
-    (r'^fanfarFolizz/$', 'utilisateur.views.index'),
+    (r'^fanfar-folizz/$', 'utilisateur.views.index'),
     (r'^sponsors/$','sponsor.views.liste'),
     (r'^media/(?P<path>.*)$','django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
     # Uncomment the admin/doc line below to enable admin documentation:
