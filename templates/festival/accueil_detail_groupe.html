@@ -1,0 +1,25 @@
+{% extends "festival/accueil.html" %}
+
+{% block css %}Groupe_detail.css{%endblock%}
+
+{%block title %}{{groupe.nom}}{%endblock %}
+
+{%block contenu %}
+	<div id="groupe_detail">
+				<div id="infos_groupe">
+					<ul>
+						<li>Origine: {{groupe.origine}}</li>
+						<li>Style: {{groupe.style}}</li>
+					</ul>
+					<p>{{groupe.description}}</p>
+				</div>
+				<div id="illustration_groupe">
+					<img
+						{% if groupe.photo.width > 400 %}
+							width = "400"
+						{% endif %}
+					src="/media/{{groupe.photo}}"/>
+				</div>
+				
+	</div>
+{%endblock %}

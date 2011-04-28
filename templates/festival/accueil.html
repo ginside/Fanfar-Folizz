@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; 
+		charset=ISO-8859-1">
+		<link href="/media/css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
+	
+		<link href="/media/css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
+		 <link href="/media/css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
+		<title>Les fanfar' folizzz - {{ titre }}</title>
+	</head>
+	<body>
+		<div id="main">
+			<div id="top">
+				<img src="/media/images/static/BanniereTitreFestival.jpg"/>
+			</div>
+			
+			<div id="menu">
+				<ul>
+					<li><a href="{% url festival.views.accueil %}">Accueil</a></li>
+					<li><a href="{% url festival.views.groupes %}">Les groupes</a></li>
+					<li>Programme</li>
+					<li>Medias</li>
+					<li>Precedentes editions</li>
+					<li><a href="{% url festival.views.infos %}">Infos pratiques</li>
+					<li><a href="{% url festival.views.liens %}">Liens</a></li>
+					<li><a href="{% url festival.views.sponsors %}">Partenaires</a></li>
+				</ul>		
+			</div>
+			
+			<div id="contenu">
+				<h1>{{ titre }}</h1>
+				{% block contenu %}
+				{% endblock %}
+			</div>
+			
+			<div id="footer">
+				Copyright Fanfar-folizzz 2011! Tous droits reserves! Etc etc!
+			</div>
+		</div>
+	</body>
+</html>

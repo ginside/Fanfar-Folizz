@@ -1,0 +1,20 @@
+{% extends "festival/accueil.html" %}
+
+{% block css %}Sponsors.css{%endblock%}
+
+{%block title %}Partenaires{%endblock %}
+
+{%block contenu %}
+	<!-- display sponsors !! -->
+	<div id="sponsors">
+		{% for sponsor in sponsors %}
+			<div id="sponsor{{sponsor.id}}" class="sponsor_detail">
+					<img width = "400" src="/media/{{sponsor.logo }}"/><br>{{sponsor.nom}}: {{sponsor.description}}
+			</div>
+		{% empty %}
+		<li id="sponsor0">
+			Aucun partenaire pour le moment...
+		</li>		
+		{% endfor %}
+	</div>
+{% endblock %}

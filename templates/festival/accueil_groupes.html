@@ -1,0 +1,24 @@
+{% extends "festival/accueil.html" %}
+
+{% block css %}Groupes.css{%endblock%}
+
+{%block title %}Les Groupes{%endblock %}
+
+{%block contenu %}
+	<div id="groupes">
+		{% for groupe in groupes %}
+			<span id="groupe{{groupe.id}}" class = "groupe">
+				<img
+					{% if groupe.photo.width > 150 %}
+						width = "300"
+					{% endif %}
+						
+				src="/media/{{groupe.photo}}"/>
+				<a href="{% url festival.views.groupes %}{{groupe.id}}/">
+				{{groupe.nom}}
+				</a>
+				({{groupe.origine}})
+			</span>
+		{% endfor %}
+	</div>
+{%endblock %}

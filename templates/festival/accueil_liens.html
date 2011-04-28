@@ -1,0 +1,23 @@
+{% extends "festival/accueil.html" %}
+
+{% block css %}Liens.css{% endblock %}
+
+{% block title %}Liens{% endblock %}
+
+{% block contenu %} 
+	<div id="liens">
+		<ul>
+		{% for lien in liens %}
+		<li id="lien{{lien.id}}">
+			<a href="{{ lien.adresse }}" target="_blank">{{ lien.adresse }}</a>
+			{{ lien.description|striptags }}
+		
+		</li>
+		{% empty %}
+			<li id="lien0">
+				Aucun lien pour le moment...
+			</li>		
+		{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

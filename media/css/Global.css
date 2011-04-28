@@ -1,0 +1,32 @@
+body
+{
+	width:			1024px;
+	margin:			auto;
+	margin-top: 	10px;
+	margin-bottom:	10px;
+	background-image:url('/media/images/static/back.jpg');
+	
+	font-family:helvetica;
+	font-size:medium;
+}
+#top
+{
+
+}
+
+#contenu
+{
+	width:			90%;
+	margin:			auto;
+	margin-top:		40px;
+	min-height:		600px;
+}
+
+#footer
+{
+	width:			80%;
+	margin:			 auto;
+	margin-top:		10px;
+	margin-bottom:	10px;
+	text-align:		center;
+}
