@@ -40,9 +40,9 @@ class InformationsPratique(models.Model):
     explications = models.TextField()
     autresInformations = models.TextField()
     def __unicode__(self):
-        return "Informatons Pratiques"
+        return "Informations Pratiques"
     def __str__(self):
-        return "Informatons Pratiques"
+        return "Informations Pratiques"
 
 class Historique(models.Model):
     description = models.TextField()
