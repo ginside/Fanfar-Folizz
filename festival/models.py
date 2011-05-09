@@ -41,6 +41,7 @@ class Festival(models.Model):
 	evenements = models.ManyToManyField(Evenement)
 	activites = models.ManyToManyField(Activite, blank = True)
 	date_creation = models.DateTimeField(auto_now_add = True, blank = True)
+	historise = models.BooleanField()
 	
 	def __unicode__(self):
 		return self.nom

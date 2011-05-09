@@ -11,7 +11,7 @@ class ActiviteAdmin(admin.ModelAdmin):
 	fields = ['qui','quoi','lieu','date','autres_informations']
 
 class FestivalAdmin(admin.ModelAdmin):
-	fields = ['nom','evenements','activites']
+	fields = ['nom','evenements','activites','historise']
 	
 class SponsorAdmin(admin.ModelAdmin):
 	fields = ['nom','logo','description']

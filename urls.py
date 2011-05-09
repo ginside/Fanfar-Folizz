@@ -19,6 +19,7 @@ urlpatterns = patterns('',
 	(r'^fanfar-folizz/groupes/(?P<groupe_id>\d+)/$', 'festival.views.groupe_detail'),
 	(r'^fanfar-folizz/programme/$', 'festival.views.programme'),
 	(r'^fanfar-folizz/medias/$', 'festival.views.medias'),
+	(r'^fanfar-folizz/historique/$','festival.views.historique'),
     # Admin :
     (r'^admin/', include(admin.site.urls)),
 	# Uncomment the admin/doc line below to enable admin documentation:

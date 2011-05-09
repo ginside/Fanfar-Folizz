@@ -14,21 +14,20 @@
 			<div id="top">
 				<img src="/media/images/static/BanniereTitreFestival.jpg"/>
 			</div>
-			
 			<div id="menu">
 				<ul>
 					<li><a href="{% url festival.views.accueil %}">Accueil</a></li>
 					<li><a href="{% url festival.views.groupes %}">Les groupes</a></li>
 					<li><a href="{% url festival.views.programme %}">Le Programme</a></li>
 					<li><a href="{% url festival.views.medias %}">Medias</a></li>
-					<li>Precedentes editions</li>
+					<li><a href="{% url festival.views.historique %}">Precedentes editions</a></li>
 					<li><a href="{% url festival.views.infos %}">Infos pratiques</li>
 					<li><a href="{% url festival.views.liens %}">Liens</a></li>
 					<li><a href="{% url festival.views.sponsors %}">Partenaires</a></li>
 				</ul>		
 			</div>
-			
 			<div id="contenu">
+			
 				<h1>{{ titre }}</h1>
 				{% block contenu %}
 				{% endblock %}
