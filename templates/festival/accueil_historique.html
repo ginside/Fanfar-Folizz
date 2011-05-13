@@ -1,0 +1,12 @@
+{% extends "festival/accueil.html" %}
+
+{% block css %} Historique.css {% endblock %}
+
+{% block contenu %}
+	{% if historique %}
+		Historique!
+	{% endif %}
+	{% if not historique %}
+		Pas d'historique!
+	{% endif %}
+{% endblock %}

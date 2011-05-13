@@ -1,0 +1,34 @@
+{% extends "festival/accueil.html" %}
+{% load festival_extras %}
+
+{% block css %}Media.css{%endblock%}
+
+{%block title %}Medias{%endblock %}
+
+{%block contenu %}
+	<div id = "media">
+		bla {{ dernier_festival }}
+		<h2>Vidéos:</h2>
+		{% for media in medias %}
+				{% if media.type == "video" %}
+				{{media.nom}}
+					{% autoescape off %}
+						{{media.code}}
+					{% endautoescape %}
+				{% endif %}
+		{% endfor %}			
+		<h2>Images:</h2>
+		{% for media in medias %}
+				{% if media.type == "image" %}
+						<a href = "{{media.fichier.url }}" target= "_blank"><img src="{{ media.fichier|thumbnail }}"  /></a>
+				{% endif %}
+		{% endfor %}
+		<h2>Autres documents:</h2>
+		{% for media in medias %}
+			{% if media.type == "pdf" %}
+					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="/media/images/static/pdf_icon_16x16.gif" />{{ media.nom|capfirst }}
+					</a>
+				{% endif %}
+		{% endfor %}
+	</div>
+{%endblock %}
