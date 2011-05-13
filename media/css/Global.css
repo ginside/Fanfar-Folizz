@@ -4,14 +4,15 @@ body
 	margin:			auto;
 	margin-top: 	10px;
 	margin-bottom:	10px;
-	background-image:url('/media/images/static/back.jpg');
+	/* background-image:url('/media/images/static/back.jpg'); */
 	
 	font-family:helvetica;
 	font-size:medium;
 }
 #top
 {
-
+	border: 10px #DE0000 solid;
+	border-radius: 25px;
 }
 
 #contenu
