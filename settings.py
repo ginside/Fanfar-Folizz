@@ -1,4 +1,4 @@
-# Django settings for globblog project.
+# Django settings for fanfar-folizz project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -46,16 +46,17 @@ USE_L10N = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = '/home/daniel/projects/fanfar-folizz/media/'
+ADMIN_MEDIA_ROOT = '/home/daniel/projects/fanfar-folizz/admin-media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/media/admin-media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5kqqsn5z2$oi)^hd#+%!rjw(=1)9ffo)a6y(qh20q%az7g)dvr'
