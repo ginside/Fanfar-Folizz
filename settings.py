@@ -1,7 +1,11 @@
 # Django settings for fanfar-folizz project.
+import os
+import sys
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+PROJECT_ROOT = os.path.dirname(__file__)
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -9,15 +13,29 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'fanfar_folizz',                      # Or path to database file if using sqlite3.
-        'USER': 'fanfar',                      # Not used with sqlite3.
-        'PASSWORD': 'bottier',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+
+if os.path.split(__file__)[1].find("daniel") == -1:
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'fanfar_folizz',                      # Or path to database file if using sqlite3.
+            'USER': 'fanfar',                      # Not used with sqlite3.
+            'PASSWORD': 'bottier',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
+}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'fanfar_folizz',                      # Or path to database file if using sqlite3.
+            'USER': 'fanfar',                      # Not used with sqlite3.
+            'PASSWORD': 'bottier',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        },
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -45,8 +63,12 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/daniel/projects/fanfar-folizz/media/'
-ADMIN_MEDIA_ROOT = '/home/daniel/projects/fanfar-folizz/admin-media/'
+
+#kimsufi distant
+MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
+ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
+
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -82,7 +104,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/daniel/projects/fanfar-folizz/templates/'
+    # kimsufi path
+    os.path.join(PROJECT_ROOT,'templates'),
 )
 
 INSTALLED_APPS = (
