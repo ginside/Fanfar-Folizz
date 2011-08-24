@@ -1,20 +1,40 @@
 body
 {
-	width:			1024px;
+	width:			992px;
 	margin:			auto;
 	margin-top: 	10px;
 	margin-bottom:	10px;
 	/* background-image:url('/media/images/static/back.jpg'); */
 	
-	font-family:helvetica;
-	font-size:medium;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:		medium;
+	font-weight:	regular;
+	color:			black;
+}
+h1,h2
+{
+	font-size:		17px;
+	font-weight:	bold;
+}
+p
+{
+	font-size:		12px;	
 }
 #top
 {
-	border: 10px #DE0000 solid;
-	border-radius: 25px;
+	margin:			auto;
 }
-
+#menu a
+{
+	font-size:		15px;
+	font-weight:	bold;
+	color:			black;
+	text-decoration:none;
+}
+#menu a:hover
+{
+	color: 			#F7931E;
+}
 #contenu
 {
 	width:			90%;
