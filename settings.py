@@ -14,7 +14,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-if os.path.split(__file__)[1].find("daniel") == -1:
+if PROJECT_ROOT.find("daniel") == -1:
     
     DATABASES = {
         'default': {
