@@ -19,7 +19,7 @@ if PROJECT_ROOT.find("knoppix") != -1:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'fanfar_folizz',                      # Or path to database file if using sqlite3.
+            'NAME': os.path.realpath('fanfar_folizz.db'),                      # Or path to database file if using sqlite3.
             'USER': 'fanfar',                      # Not used with sqlite3.
             'PASSWORD': 'bottier',                  # Not used with sqlite3.
             'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
