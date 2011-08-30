@@ -14,7 +14,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-if PROJECT_ROOT.find("knoppix") != -1:
+if 0 and PROJECT_ROOT.find("knoppix") != -1:
     
     DATABASES = {
         'default': {

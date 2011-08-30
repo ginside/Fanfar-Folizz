@@ -1,15 +1,14 @@
 body
 {
-	width:			992px;
-	margin:			auto;
-	margin-top: 	10px;
-	margin-bottom:	10px;
+	width:			805px;
+	margin:			10px auto;
 	/* background-image:url('/media/images/static/back.jpg'); */
 	
 	font-family: 'Droid Sans', sans-serif;
 	font-size:		medium;
 	font-weight:	regular;
 	color:			black;
+	font-size:     12px;   
 }
 h1,h2
 {
@@ -18,29 +17,63 @@ h1,h2
 }
 p
 {
-	font-size:		12px;	
 }
+
 #top
 {
-	margin:			auto;
+	
+}
+#menu
+{
+ 
+    font-size:      15px;
+    font-weight:    bold;
+    color:          #666666;
+    border:         1px black solid;
+    height:         34px;
+    width:          840px;
+    
+    -webkit-box-shadow: 0px 4px 4px #DDD ;
+    -moz-box-shadow: 0px 4px 4px #DDD ;
+}
+#menu ul
+{
+    margin-top:         1%; 
+    margin-bottom:      1%;
+    margin-left:        -28px;
+    /*width:         100%;*/
+}
+
+#menu li
+{
+    display:inline;
+    margin:        0px 2px;
 }
 #menu a
-{
-	font-size:		15px;
-	font-weight:	bold;
-	color:			black;
-	text-decoration:none;
+{   color:          black;
+    text-decoration:none;
 }
 #menu a:hover
 {
-	color: 			#F7931E;
+    color:          #F7931E;
+}
+#titreee
+{
+    margin-top:     10px;	
+}
+#div_contenu
+{
+	width:			100%;
+	min-height:		600px;
+    
+    border-left:    1px solid black;
+    border-right:    1px solid black;
+    margin:          auto;
 }
 #contenu
 {
-	width:			90%;
-	margin:			auto;
-	margin-top:		40px;
-	min-height:		600px;
+	width
+    list-style-image: url('/media/images/static/puce_style.jpg');	
 }
 
 #footer

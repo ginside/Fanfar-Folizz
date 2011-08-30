@@ -75,7 +75,10 @@ def groupe_detail(request, groupe_id):
 	
 def programme(request):
 	""" programme du festival le plus recent en base) """
-	festival = Festival.objects.latest(field_name="date_creation")
+	try:
+            festival = Festival.objects.latest(field_name="date_creation")
+        except:
+            return render_to_response('festival/accueil.html')
 	dates = []
 	for evenement in festival.evenements.all():
 		dates.append(evenement.heure_passage.date())
@@ -89,44 +92,49 @@ def programme(request):
 		'festival' : festival,
 		'dates' : liste_dates,
 	}
+    
 	return render_to_response('festival/accueil_programme.html',retour)
 	
 def medias(request):
 	""" vidéos, images et pdfs """
 	medias = Media.objects.all()
-	dernier_festival = Festival.objects.get(nom__endswith = '2011')
-	for media in medias:
-		if isinstance(media.festival,Festival):
-			if media.festival.id == dernier_festival.id:
-				# le média est une vidéo
-				if len(media.adresse):
-					media.type = "video"
-					if media.adresse.find('youtube') != -1:
-						src = "http://www.youtube.com/embed/"+ media.adresse[media.adresse.find("?v=")+3:]
-					elif media.adresse.find('youtu.be') != -1:
-						src = "http://www.youtube.com/embed/"+ media.adresse[16:]
-					elif media.adresse.find('dailymotion') != -1:
-						src = 'http://www.dailymotion.com/embed/video/'+ media.adresse.split("/video/")[1].split("_")[0] +'?theme=none&wmode=transparent'
-					else:
-						media.code = media.adresse
-						continue
-					media.code = u'<iframe width="380" height="285" src="'+ src +u'" frameborder="0" allowfullscreen></iframe>'
-				
-				elif len(media.fichier):
-					extension = str(media.fichier).split(".")[-1]
-					# le média est une image
-					if extension in ['jpg','png','jpeg','gif','bmp']:
-						media.type ="image"
-						
-					# le média est un pdf
-					elif extension == 'pdf':
-						media.type = extension
-
-	retour = {
-		'medias' : medias,
-		'def' : dernier_festival.id,
-	}
-	return render_to_response('festival/accueil_medias.html',retour)
+        try:
+	       dernier_festival = Festival.objects.get(nom__endswith = '2011')
+        except:
+            return render_to_response('festival/accueil.html')
+            
+    	for media in medias:
+    		if isinstance(media.festival,Festival):
+    			if media.festival.id == dernier_festival.id:
+    				# le média est une vidéo
+    				if len(media.adresse):
+    					media.type = "video"
+    					if media.adresse.find('youtube') != -1:
+    						src = "http://www.youtube.com/embed/"+ media.adresse[media.adresse.find("?v=")+3:]
+    					elif media.adresse.find('youtu.be') != -1:
+    						src = "http://www.youtube.com/embed/"+ media.adresse[16:]
+    					elif media.adresse.find('dailymotion') != -1:
+    						src = 'http://www.dailymotion.com/embed/video/'+ media.adresse.split("/video/")[1].split("_")[0] +'?theme=none&wmode=transparent'
+    					else:
+    						media.code = media.adresse
+    						continue
+    					media.code = u'<iframe width="380" height="285" src="'+ src +u'" frameborder="0" allowfullscreen></iframe>'
+    				
+    				elif len(media.fichier):
+    					extension = str(media.fichier).split(".")[-1]
+    					# le média est une image
+    					if extension in ['jpg','png','jpeg','gif','bmp']:
+    						media.type ="image"
+    						
+    					# le média est un pdf
+    					elif extension == 'pdf':
+    						media.type = extension
+    
+    	retour = {
+    		'medias' : medias,
+    		'def' : dernier_festival.id,
+    	}
+    	return render_to_response('festival/accueil_medias.html',retour)
 	
 def historique(request):
 	"""historique des précédentes éditions, médias"""
