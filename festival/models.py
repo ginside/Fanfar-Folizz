@@ -52,8 +52,8 @@ class Media(models.Model):
 	fichier = models.FileField(upload_to = "files/",blank = "True")
 	festival = models.ForeignKey('Festival', blank = "True", null = "True")
 	
-	def __unicode(self):
-		return self.festival + unicode(" - ") + force_unicode(self.nom)
+	def __unicode__(self):
+		return unicode(self.festival) + unicode(" - ") + self.nom
 	
 	def __str__(self):
 		festival = "Aucun festival"
