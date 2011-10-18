@@ -142,7 +142,7 @@ def historique(request):
 	anciens_ids_festival = []
 	for f in anciens_festivals:
 		anciens_ids_festival.append(f.id)
-	historique = 0
+	historique,retour = 0,{}
 	if len(anciens_festivals):
 		historique = 1
 		medias = Media.objects.all()
@@ -172,8 +172,8 @@ def historique(request):
 						# le média est un pdf
 						elif extension == 'pdf':
 							media.type = extension
-	retour = {
-		'medias' : medias,
-		'historique' : historique,
-	}
+        	retour = {
+        		'medias' : medias,
+        		'historique' : historique,
+                }
 	return render_to_response('festival/accueil_historique.html',retour)
