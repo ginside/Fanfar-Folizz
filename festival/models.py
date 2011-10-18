@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.encoding import force_unicode
 
 class Groupe(models.Model):
     nom = models.CharField(max_length = 50)
@@ -53,7 +53,7 @@ class Media(models.Model):
 	festival = models.ForeignKey('Festival', blank = "True", null = "True")
 	
 	def __unicode(self):
-		return self.festival + unicode(" - ") + self.nom
+		return self.festival + unicode(" - ") + force_unicode(self.nom)
 	
 	def __str__(self):
 		festival = "Aucun festival"
