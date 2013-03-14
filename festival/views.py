@@ -99,7 +99,7 @@ def medias(request):
 	""" vidéos, images et pdfs """
 	medias = Media.objects.all()
         try:
-	       dernier_festival = Festival.objects.get(nom__endswith = '2011')
+	       dernier_festival = Festival.objects.get(nom__endswith = '2013!')
         except:
             return render_to_response('festival/accueil.html')
             
