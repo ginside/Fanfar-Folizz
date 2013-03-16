@@ -7,6 +7,10 @@ TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
+APP_ENV = 'production'
+if PROJECT_ROOT.find("workspace") != -1:
+    APP_ENV = 'dev'
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
@@ -14,7 +18,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-if PROJECT_ROOT.find("workspace") != -1:
+if APP_ENV == 'dev':
     
     DATABASES = {
         'default': {
@@ -73,12 +77,18 @@ ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
-
+if APP_ENV == 'dev' :
+    MEDIA_URL = '/../media/'   
+else :
+    MEDIA_URL = '/media/'
+      
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/' #admin-media/  ????
+if APP_ENV == 'dev' :
+    ADMIN_MEDIA_PREFIX = '/admin-media/' 
+else:
+    ADMIN_MEDIA_PREFIX  = '/media/' #admin-media/  ????
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5kqqsn5z2$oi)^hd#+%!rjw(=1)9ffo)a6y(qh20q%az7g)dvr'
