@@ -104,37 +104,13 @@ def medias(request):
             return render_to_response('festival/accueil.html')
             
     	for media in medias:
-    		if isinstance(media.festival,Festival):
-    			if media.festival.id == dernier_festival.id:
-    				# le média est une vidéo
-    				if len(media.adresse):
-    					media.type = "video"
-    					if media.adresse.find('youtube') != -1:
-    						src = "http://www.youtube.com/embed/"+ media.adresse[media.adresse.find("?v=")+3:]
-    					elif media.adresse.find('youtu.be') != -1:
-    						src = "http://www.youtube.com/embed/"+ media.adresse[16:]
-    					elif media.adresse.find('dailymotion') != -1:
-    						src = 'http://www.dailymotion.com/embed/video/'+ media.adresse.split("/video/")[1].split("_")[0] +'?theme=none&wmode=transparent'
-    					else:
-    						media.code = media.adresse
-    						continue
-    					media.code = u'<iframe width="380" height="285" src="'+ src +u'" frameborder="0" allowfullscreen></iframe>'
-    				
-    				elif len(media.fichier):
-    					extension = str(media.fichier).split(".")[-1]
-    					# le média est une image
-    					if extension in ['jpg','png','jpeg','gif','bmp']:
-    						media.type ="image"
-    						
-    					# le média est un pdf
-    					elif extension == 'pdf':
-    						media.type = extension
+			media.display()
     
     	retour = {
     		'medias' : medias,
     		'def' : dernier_festival.id,
     	}
-    	return render_to_response('festival/accueil_medias.html',retour)
+    	return render_to_response('festival/accueil_medias.html', retour)
 	
 def historique(request):
 	"""historique des précédentes éditions, médias"""

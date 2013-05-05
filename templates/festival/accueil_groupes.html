@@ -14,7 +14,7 @@
 					{% endif %}
 						
 				src="/media/{{groupe.photo}}"/>
-				<a href="{% url festival.views.groupes %}{{groupe.id}}/">
+				<a href="{% url "festival.views.groupes" %}{{groupe.id}}/">
 				{{groupe.nom}}
 				</a>
 				({{groupe.origine}})

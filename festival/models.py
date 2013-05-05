@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.utils.encoding import force_unicode
 
@@ -60,7 +62,35 @@ class Media(models.Model):
 		if not str(self.festival) == "None":
 			festival = str(self.festival)
 		return  festival + " - " + self.nom
+
+	def display(self):
+    	# if isinstance(media.festival,Festival):
+		# 	if media.festival.id == dernier_festival.id:
+		# le média est une vidéo
+		if len(self.adresse):
+			self.type = "video"
+			src = None
+			if self.adresse.find('youtube') != -1:
+				src = "http://www.youtube.com/embed/"+ self.adresse[self.adresse.find("?v=")+3:]
+			elif self.adresse.find('youtu.be') != -1:
+				src = "http://www.youtube.com/embed/"+ self.adresse[16:]
+			elif self.adresse.find('dailymotion') != -1:
+				src = 'http://www.dailymotion.com/embed/video/'+ self.adresse.split("/video/")[1].split("_")[0] +'?theme=none&wmode=transparent'
+			else:
+				self.code = self.adresse
+			if src:	
+				self.code = u'<iframe width="380" height="285" src="'+ src +u'" 	frameborder="0" allowfullscreen></iframe>'
 		
+		elif len(self.fichier):
+			extension = str(self.fichier).split(".")[-1]
+			# le média est une image
+			if extension in ['jpg','png','jpeg','gif','bmp']:
+				self.type = "image"
+				
+			# le média est un pdf
+			elif extension == 'pdf':
+				self.type = extension
+    
 class Sponsor(models.Model):
     nom = models.CharField(max_length = 50)
     logo = models.ImageField(upload_to="images")
