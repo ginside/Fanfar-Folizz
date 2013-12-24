@@ -1,20 +1,151 @@
+#GROUPE
+
+- model: festival.groupe
+  pk: 1
+  fields:
+    nom: La banda tchitchaaa
+    style: Fanfare
+    photo: images/logo_banda_tchitchaaa.jpg
+    description: tralala
+    origine: France
+- model: festival.groupe
+  pk: 2
+  fields:
+    nom: ChaChaCha Nation
+    style: Salsa
+    photo: images/do-the-cha-cha-cha-rosencruz-sumera.jpg
+    description: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    origine: La Havane
+- model: festival.groupe
+  pk: 3
+  fields:
+    nom: Thierry Poncelet
+    style: Troubadour
+    photo: images/Thierry-Poncelet-The-Troubadour-97205.jpg
+    description: Un ménéstrel
+    origine: Bourgogne
+- model: festival.groupe
+  pk: 4
+  fields:
+    nom: Les tracto-pelles
+    style: Punk
+    photo: images/2be3_4.jpg
+    description: des oufs malades
+    origine: Écosse
+
+#EVENEMENT
+
+- model: festival.evenement
+  pk: 1
+  fields:
+    groupe: 1
+    lieu: "Grande place"
+    heure_passage: "2013-01-01T18:30:00+02:00"
+
+- model: festival.evenement
+  pk: 2
+  fields:
+    groupe: 1
+    lieu: "Près de l'église"
+    heure_passage: "2013-01-01T20:30:00+02:00"
+
+- model: festival.evenement
+  pk: 3
+  fields:
+    groupe: 2
+    lieu: "Chez Gégé"
+    heure_passage: "2013-01-02T00:30:00+02:00"
+
+#ACTIVITE
+
 - model: festival.activite
   pk: 1
   fields:
     qui: Bozo le clown
     quoi: cours de maquillage
     lieu: place du village
-    date: 2013-01-01 17:00
+    date: "2013-01-01T17:00:00+02:00"
     autres_informations: rien
 
 - model: festival.activite
   pk: 2
   fields:
-    qui: Dorothee
+    qui: Dorothée
     quoi: chanson
     lieu: eglise
-    date: 2013-01-02 06:00
+    date: "2013-01-02T06:00:00+02:00"
     autres_informations: rien
+
+#MEDIA
+- model: festival.media
+  pk: 1
+  fields:
+    nom: Tuto serviettage
+    adresse: "http://www.youtube.com/watch?v=15GHT00sstk"
+    fichier: files/29545218_150x150.jpg
+    festival: 2
+
+
+- model: festival.media
+  pk: 2
+  fields:
+    nom: Image
+    fichier: images/vietnam_big.jpg
+    festival: 2
+    
+
+- model: festival.media
+  pk: 3
+  fields:
+    nom: Test de fichier PDF
+    fichier: files/pdf-test.pdf
+    festival: 2
+
+#FESTIVAL
+
+- model: festival.festival
+  pk: 1
+  fields:
+    nom: Fanfar Folizz 2011
+    date_creation: "2011-01-02T06:00:00+02:00"
+    historise: 1
+
+
+- model: festival.festival
+  pk: 2
+  fields:
+    nom: Fanfar Folizz 2013
+    evenements: [1 , 2 , 3]
+    activites: [1 , 2]
+    date_creation: "2013-01-02T06:00:00+02:00"
+    historise: 0
+
+#INFORMATION PRATIQUE
+- model: festival.informationsPratique
+  pk: 1
+  fields:
+    carte: images/plan_gene.gif
+    explications: par ici puis par la puis encore par la puis encore par ci
+    autresInformations: blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
+    
+    
+#SPONSOR
+
+- model: festival.sponsor
+  pk: 1
+  fields:
+    nom: Poissonnerie Brochot
+    logo: images/6525546_5.jpg
+    description: Il est frais mon poisson!
+
+- model: festival.sponsor
+  pk: 2
+  fields:
+    nom: Boucherie Sanzot
+    logo: images/boucherie_carrere_didier_2.JPG
+    description: Il est bon mon bifteak!
+    
+#LIEN
 
 - model: festival.lien
   pk: 1

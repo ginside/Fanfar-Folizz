@@ -5,7 +5,12 @@ import sys
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-PROJECT_ROOT = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT = BASE_DIR
+
+
+
+ALLOWED_HOSTS = []
 
 APP_ENV = 'production'
 if PROJECT_ROOT.find("workspace") != -1:
@@ -64,6 +69,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+USE_TZ = True
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
 
@@ -76,18 +83,17 @@ ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
+
+MEDIA_URL = '/media/'
 if APP_ENV == 'dev' :
     MEDIA_URL = '/../media/'   
-else :
-    MEDIA_URL = '/media/'
       
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
+ADMIN_MEDIA_PREFIX  = '/media/' #admin-media/  ????
 if APP_ENV == 'dev' :
-    ADMIN_MEDIA_PREFIX = '/admin-media/' 
-else:
-    ADMIN_MEDIA_PREFIX  = '/media/' #admin-media/  ????
+    ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5kqqsn5z2$oi)^hd#+%!rjw(=1)9ffo)a6y(qh20q%az7g)dvr'
@@ -105,9 +111,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'festival.urls'
+
+WSGI_APPLICATION = 'festival.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -122,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     #'django.contrib.sites',
+    'django.contrib.staticfiles',
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -129,3 +139,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'festival',
 )
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+STATIC_URL = '/static/'
