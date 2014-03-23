@@ -16,7 +16,7 @@ def index(request):
         'urlFestival' : urlFestival,
         'urlBanda' : urlBanda
     }
-    return render_to_response('index.html',retour)
+    return render_to_response('index.html',RequestContext(request, retour))
 
 
 def    accueil(request):
