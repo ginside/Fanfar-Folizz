@@ -91,7 +91,7 @@ if APP_ENV == 'dev' :
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX  = '/media/' #admin-media/  ????
+ADMIN_MEDIA_PREFIX  = '/admin-media/' #admin-media/  ????
 if APP_ENV == 'dev' :
     ADMIN_MEDIA_PREFIX = '/admin-media/'
 
