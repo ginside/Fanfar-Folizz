@@ -26,7 +26,7 @@
 		<h2>Autres documents:</h2>
 		{% for media in medias %}
 			{% if media.type == "pdf" %}
-					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="/media/images/static/pdf_icon_16x16.gif" />{{ media.nom|capfirst }}
+					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="{{ MEDIA_URL }}images/static/pdf_icon_16x16.gif" />{{ media.nom|capfirst }}
 					</a>
 				{% endif %}
 		{% endfor %}

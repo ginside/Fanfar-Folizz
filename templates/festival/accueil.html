@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; 
 		charset=ISO-8859-1">
-		<link href="/media/css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
+		<link href="{{ MEDIA_URL }}css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 		<link href="{{ MEDIA_URL }}css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
 		 <link href="{{ MEDIA_URL }}css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
@@ -12,7 +12,7 @@
 	<body>
 		<div id="main">
 			<div id="top">
-				<img src="/media/images/static/fanfare_banniere.jpg"/>
+				<img src="{{ MEDIA_URL }}images/static/fanfare_banniere.jpg"/>
 			</div>
 			<div id="menu">
 				<ul><li>::</li>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div id="bottom">
-			     <img src="/media/images/static/footer_audessus_centrer2.jpg"/>
+			     <img src="{{ MEDIA_URL }}images/static/footer_audessus_centrer2.jpg"/>
 			</div>
 			<div id="footer_div">
 			     <div id="footer">

@@ -9,7 +9,7 @@
 	<div id="sponsors">
 		{% for sponsor in sponsors %}
 			<div id="sponsor{{sponsor.id}}" class="sponsor_detail">
-					<img width = "400" src="/media/{{sponsor.logo }}"/><br>{{sponsor.nom}}: {{sponsor.description}}
+					<img width = "400" src="{{ MEDIA_URL }}{{sponsor.logo }}"/><br>{{sponsor.nom}}: {{sponsor.description}}
 			</div>
 		{% empty %}
 		<li id="sponsor0">

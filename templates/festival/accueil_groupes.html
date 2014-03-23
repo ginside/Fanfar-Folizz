@@ -13,7 +13,7 @@
 						width = "300"
 					{% endif %}
 						
-				src="/media/{{groupe.photo}}"/>
+				src="{{ MEDIA_URL }}{{groupe.photo}}"/>
 				<a href="{% url "festival.views.groupes" %}{{groupe.id}}/">
 				{{groupe.nom}}
 				</a>
