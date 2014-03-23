@@ -86,7 +86,7 @@ ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
 
 MEDIA_URL = '/../fanfar/media/'
 if APP_ENV == 'dev' :
-MEDIA_URL = '/../media/'   
+    MEDIA_URL = '/../media/'   
       
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.

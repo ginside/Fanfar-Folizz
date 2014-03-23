@@ -6,7 +6,18 @@
 		<link href="{{ MEDIA_URL }}css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 		<link href="{{ MEDIA_URL }}css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
-		 <link href="{{ MEDIA_URL }}css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
+		<link href="{{ MEDIA_URL }}css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
+		<style type="text/css">
+			#footer_div
+			{
+				background-image: 			url("{{ MEDIA_URL }}images/static/footer_x_repeat.jpg");
+			}
+			#contenu
+			{
+			    list-style-image: 			url("{{ MEDIA_URL }}images/static/puce_style.jpg");
+			}
+		</style>
+		
 		<title>Les fanfar' folizzz - {{ titre }}</title>
 	</head>
 	<body>

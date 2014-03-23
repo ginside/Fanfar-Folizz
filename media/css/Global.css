@@ -2,8 +2,6 @@ body
 {
 	width:						100%;
 	margin:						10px auto;
-	/* background-image:url('/media/images/static/back.jpg'); */
-	
 	font-family: 				'Droid Sans', sans-serif;
 	font-size:					medium;
 	font-weight:				normal;
@@ -82,7 +80,6 @@ p
 #contenu
 {
 	margin: 					37px 37px 0px;
-    list-style-image: 			url('/media/images/static/puce_style.jpg');
 }
 #bottom
 {
@@ -94,7 +91,6 @@ p
 {
     float:						left;
 	background-repeat: 			repeat-x;
-	background-image: 			url('/media/images/static/footer_x_repeat.jpg');
 	width:						100%;
 	margin:						0px auto;
 	text-align:					center;
