@@ -143,5 +143,7 @@ INSTALLED_APPS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
+STATIC_URL = '/fanfar/static/'
+if APP_ENV == 'dev' :
+    STATIC_URL = '/static/'
+    
