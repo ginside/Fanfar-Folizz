@@ -10,7 +10,7 @@ from django.template.context import RequestContext
 def index(request):
     """page de depart. separation entre les deux sites."""
     
-    urlFestival,urlBanda = "/fanfar-folizz","/banda-tchitchaa"
+    urlFestival,urlBanda = "/fanfar/fanfar-folizz","/fanfar/banda-tchitchaa"
     retour = {
         'date' : date.today(),
         'urlFestival' : urlFestival,
@@ -103,7 +103,7 @@ def medias(request):
        dernier_festival = Festival.objects.get(nom__endswith = '2013')
        print dernier_festival
     except:
-        return render_to_response('festival/accueil.html')
+        return render_to_response('festival/accueil.html', RequestContext(request, retour))
         
     for media in medias:
         media.display()
