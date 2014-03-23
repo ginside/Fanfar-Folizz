@@ -5,8 +5,8 @@
 		charset=ISO-8859-1">
 		<link href="/media/css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-		<link href="/media/css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
-		 <link href="/media/css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
+		<link href="{{ MEDIA_URL }}css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
+		 <link href="{{ MEDIA_URL }}css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
 		<title>Les fanfar' folizzz - {{ titre }}</title>
 	</head>
 	<body>
@@ -26,7 +26,6 @@
 					<li><a href="{% url "festival.views.sponsors" %}">Partenaires</a></li><li>::</li>
 				</ul>		
 			</div>
-			<div id="div_contenu">
 			    <div id="contenu">
 					<h1>{{ titre|upper }}</h1>
 					{% block contenu %}

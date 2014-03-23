@@ -5,6 +5,7 @@ from datetime import date
 from django.shortcuts import render_to_response
 from festival.models import Sponsor,Lien,InformationsPratique,Groupe,Festival,Activite,Media
 from django.conf import settings 
+from django.template.context import RequestContext
 
 def index(request):
     """page de depart. separation entre les deux sites."""
@@ -26,7 +27,8 @@ def    accueil(request):
         'titre' : titre_page,
         'specific_stylesheet' : specific_stylesheet
     }
-    return render_to_response('festival/accueil.html',retour)
+    context_instance=RequestContext(request, retour)
+    return render_to_response('festival/accueil.html',context_instance)
     
 def sponsors(request):
     """sponsors du festival."""
