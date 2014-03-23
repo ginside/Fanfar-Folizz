@@ -103,7 +103,7 @@ def medias(request):
        dernier_festival = Festival.objects.get(nom__endswith = '2013')
        print dernier_festival
     except:
-        return render_to_response('festival/accueil.html', RequestContext(request, retour))
+        return render_to_response('festival/accueil.html', RequestContext(request, {}))
         
     for media in medias:
         media.display()
