@@ -2,7 +2,7 @@
 
 {% block css %}Sponsors.css{%endblock%}
 
-{%block title %}Partenaires{%endblock %}
+{%block titre %}Partenaires{%endblock %}
 
 {%block contenu %}
 	<!-- display sponsors !! -->
@@ -12,9 +12,11 @@
 					<img width = "400" src="{{ MEDIA_URL }}{{sponsor.logo }}"/><br>{{sponsor.nom}}: {{sponsor.description}}
 			</div>
 		{% empty %}
-		<li id="sponsor0">
-			Aucun partenaire pour le moment...
-		</li>		
+		<ul>
+			<li id="sponsor0">
+				Aucun partenaire pour le moment...
+			</li>
+		</ul>		
 		{% endfor %}
 	</div>
 {% endblock %}

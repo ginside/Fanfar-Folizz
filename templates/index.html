@@ -7,15 +7,15 @@
 	</head>
 	<body>
 	<div>
-		<a href="{{urlBanda}}"><img src="{{ MEDIA_URL }}images/static/logo/logoBandaExport.png"/></a>
+		<a href="/"><img src="{{ MEDIA_URL }}images/static/logo/logoBandaExport.png"/></a>
 		
-		<a href="{{urlFestival}}"><img src="{{ MEDIA_URL }}images/static/logo/logofestival2011.png"/></a>
+		<a href="{% url 'festival.views.accueil' %}"><img src="{{ MEDIA_URL }}images/static/logo/logofestival2011.png"/></a>
 	</div>
 	<div>
 		
-		 <a href="{{urlBanda}}">La Banda Tchitchaaa</a> 
-		 <a href="{% url "festival.views.accueil" %}">Les Fanfar'Folizzz</a> 
+		 <a href=""/"">La Banda Tchitchaaa</a> 
+		 <a href="{% url 'festival.views.accueil' %}">Les Fanfar'Folizzz</a> 
 	</div>
-	<div id="footer">{{date}} <a href="http://tripledash.free.fr/">Forum</a> </div>
+	<div id="footer">{% now "d m y" %} <a href="http://tripledash.free.fr/">Forum</a> </div>
 	</body>
 </html>

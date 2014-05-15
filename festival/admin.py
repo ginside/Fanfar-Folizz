@@ -1,4 +1,4 @@
-from models import Groupe,Evenement,Sponsor,InformationsPratique,Historique,Lien,Activite,Festival,Media
+from models import *
 from django.contrib import admin
 
 class GroupeAdmin(admin.ModelAdmin):
@@ -28,6 +28,29 @@ class LienAdmin(admin.ModelAdmin):
 class MediaAdmin(admin.ModelAdmin):
     fields = ['nom','adresse','fichier','festival']
     
+class ArticleAdmin(admin.ModelAdmin):
+    fields = ['titre','contenu']
+    def save_model(self, request, obj, form, change):
+        instance = form.save(commit=False)
+        if not hasattr(instance,'auteur'):
+            instance.auteur = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+
+    def save_formset(self, request, form, formset, change): 
+        def set_user(instance):
+            if not instance.auteur:
+                instance.auteur = request.user
+            instance.save()
+        if formset.model == Article:
+            instances = formset.save(commit=False)
+            map(set_user, instances)
+            formset.save_m2m()
+            return instances
+        else:
+            return formset.save()
+    
 admin.site.register(Groupe, GroupeAdmin)
 admin.site.register(Evenement, EvenementAdmin)
 admin.site.register(InformationsPratique, InformationsPratiqueAdmin)
@@ -37,3 +60,4 @@ admin.site.register(Sponsor, SponsorAdmin)
 admin.site.register(Festival, FestivalAdmin)
 admin.site.register(Activite, ActiviteAdmin)
 admin.site.register(Media, MediaAdmin)
+admin.site.register(Article, ArticleAdmin)

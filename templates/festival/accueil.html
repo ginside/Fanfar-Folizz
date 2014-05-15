@@ -1,73 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; 
-		charset=ISO-8859-1">
-		<link href="{{ MEDIA_URL }}css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-		<link href="{{ MEDIA_URL }}css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
-		<link href="{{ MEDIA_URL }}css/{% block css %}{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>
-		<style type="text/css">
-			#footer_div
-			{
-				background-image: 			url("{{ MEDIA_URL }}images/static/footer_x_repeat.jpg");
-			}
-			#contenu
-			{
-			    list-style-image: 			url("{{ MEDIA_URL }}images/static/puce_style.jpg");
-			}
-		</style>
-		
-		<title>Les fanfar' folizzz - {{ titre }}</title>
-	</head>
-	<body>
-		<div id="main">
-			<div id="top">
-				<img src="{{ MEDIA_URL }}images/static/fanfare_banniere.jpg"/>
-			</div>
-			<div id="menu">
-				<ul><li>::</li>
-					<li><a href="{% url "festival.views.accueil" %}">Accueil</a></li><li>::</li>
-					<li><a href="{% url "festival.views.groupes" %}">Les groupes</a></li><li>::</li>
-					<li><a href="{% url "festival.views.programme" %}">Le Programme</a></li><li>::</li>
-					<li><a href="{% url "festival.views.medias" %}">Medias</a></li><li>::</li>
-					<li><a href="{% url "festival.views.historique" %}">Precedentes editions</a></li><li>::</li>
-					<li><a href="{% url "festival.views.infos" %}">Infos pratiques</a></li><li>::</li>
-					<li><a href="{% url "festival.views.liens" %}">Liens</a></li><li>::</li>
-					<li><a href="{% url "festival.views.sponsors" %}">Partenaires</a></li><li>::</li>
-				</ul>		
-			</div>
-				<div id="div_contenu">
-				    <div id="contenu">
-						<h1>{{ titre|upper }}</h1>
-						{% block contenu %}
-						<p>
-						    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-						</p>
-						<ul>
-		                    <li>
-		                    bla
-		                    </li>
-		                    <li>
-		                    bla
-		                    </li>
-		                    <li>
-		                    bla
-		                    </li>
-						</ul>
-						{% endblock %}
-					</div>
-				</div>
-			</div>
-			<div id="bottom">
-			     <img src="{{ MEDIA_URL }}images/static/footer_audessus_centrer2.jpg"/>
-			</div>
-			<div id="footer_div">
-			     <div id="footer">
-                    <span style="background-color: black">
-Copyright Fanfar-folizzz 2011! Tous droits reserves! Etc etc!</span>
-                </div>
-			</div>
-		</div>
-	</body>
-</html>
+{% extends "festival/base_accueil.html" %} 
+{% load festival_extras %}
+{% block soustitre %} 
+	{% filter upper %} 
+	 {% block titre %}{% endblock %} 
+	{% endfilter %}
+{%endblock %}
+{% block contenu %}
+     {{ block.super }}
+     {% include "festival/news.html" with news=news %}
+{% endblock %}

@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.utils.encoding import force_unicode
+from django.contrib.auth import get_user_model, get_user
 
 class Groupe(models.Model):
     nom = models.CharField(max_length = 50)
@@ -25,19 +26,20 @@ class Evenement(models.Model):
     
 
 
-class Activite(models.Model):
-    qui = models.CharField(max_length = 50)
-    quoi = models.TextField()
-    lieu = models.CharField(max_length = 50)
-    date = models.DateTimeField()
-    autres_informations = models.TextField()
     
     def __unicode__(self):
         sujet = unicode(self.quoi)
         if len(sujet) > 50:
             sujet = sujet[:50]+u"..."
         return self.qui + " - " +  sujet + u" [heure " + unicode(self.date.time())[:5] + " - date " + unicode(self.date.date()) + u"]"
-    
+
+class Activite(models.Model):
+    qui = models.CharField(max_length = 50)
+    quoi = models.TextField()
+    lieu = models.CharField(max_length = 50)
+    date = models.DateTimeField()
+    autres_informations = models.TextField()
+        
 class Festival(models.Model):
     nom = models.CharField(max_length = 50)
     evenements = models.ManyToManyField(Evenement)
@@ -131,3 +133,9 @@ class Lien(models.Model):
         return self.adresse
     def __str__(self):
         return self.adresse
+    
+class Article(models.Model):
+    titre = models.CharField(max_length = 64)
+    contenu = models.TextField()
+    date = models.DateTimeField(auto_now = True)
+    auteur = models.ForeignKey(get_user_model())

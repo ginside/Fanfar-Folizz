@@ -108,3 +108,17 @@ p
     line-height: 				19px;
     text-align: 				center;
 }
+
+.news_titre {
+  
+} 
+.news_contenu {
+  
+} 
+.news_footer {
+  float: right;
+}
+
+.news {
+  margin-bottom: 5px;
+}
