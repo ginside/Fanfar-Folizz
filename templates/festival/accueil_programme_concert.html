@@ -1,0 +1,13 @@
+ <div class="programme_concert_horaire">
+    <div class="horaire">
+        {{concert.heure_passage|date:"H:i"}}
+    </div>
+</div>
+<div class="programme_concert_groupe">
+    <div class="nom_groupe">
+		<a href="{% url "festival.views.groupes" %}{{concert.groupe.id}}/" >
+		    {{concert.groupe.nom|upper}}
+		</a> 
+	</div>
+	<!-- ({{concert.lieu}})-->
+</div>

@@ -21,17 +21,10 @@ class Evenement(models.Model):
     groupe = models.ForeignKey(Groupe)
     lieu = models.CharField(max_length = 50)
     heure_passage = models.DateTimeField()
-    def __unicode__(self):
+    def __str__(self):
         return self.groupe.nom + " - " + str(self.heure_passage)
-    
-
-
-    
     def __unicode__(self):
-        sujet = unicode(self.quoi)
-        if len(sujet) > 50:
-            sujet = sujet[:50]+u"..."
-        return self.qui + " - " +  sujet + u" [heure " + unicode(self.date.time())[:5] + " - date " + unicode(self.date.date()) + u"]"
+        return unicode(self.__str__())
 
 class Activite(models.Model):
     qui = models.CharField(max_length = 50)
@@ -139,3 +132,8 @@ class Article(models.Model):
     contenu = models.TextField()
     date = models.DateTimeField(auto_now = True)
     auteur = models.ForeignKey(get_user_model())
+    
+    def __unicode__(self):
+        return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre
+    def __str__(self):
+        return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre

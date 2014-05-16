@@ -1,0 +1,12 @@
+ <div class="programme_activite_horaire">
+    <div class="horaire">
+        {{activite.date|date:"H:i"}}
+    </div>
+</div>
+<div class="programme_concert_groupe">
+    <div class="nom_groupe">
+	    {{activite.quoi|upper}}
+	</div>
+	<div class="activite_lieu"> {{activite.lieu}}</div>
+</div>
+<!-- {{activite.autres_informations}} -->

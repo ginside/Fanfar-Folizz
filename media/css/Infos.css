@@ -1,0 +1,13 @@
+.infos_pratiques {
+position: relative;
+left: 13%;
+}
+
+.infos_pratiques_texte {
+	margin-top: 10px;
+	display: block;
+	word-wrap: break-word;
+}
+.infos_pratiques_texte p {
+	
+}

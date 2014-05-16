@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/Global.css" />
+{% endblock %}
+{% block title %}{{ title }} | administration FanFar-FolizZz{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">Administration FanFar-FolizZz</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
