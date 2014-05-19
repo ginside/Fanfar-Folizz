@@ -1,0 +1,6 @@
+Django==1.6.5
+Pillow==2.4.0
+PyYAML==3.11
+django-easy-maps==0.9
+django-leaflet==0.13.2
+geopy==0.99
