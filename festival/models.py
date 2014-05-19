@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.utils.encoding import force_unicode
-from django.contrib.auth import get_user_model, get_user
+from django.contrib.auth import get_user_model
 
 class Groupe(models.Model):
     nom = models.CharField(max_length = 50)

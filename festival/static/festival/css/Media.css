@@ -1,0 +1,30 @@
+#div_contenu {
+	width: 816px;
+}
+#contenu {
+	width: 100%;
+	margin: 15px 0px ;
+}
+#div_contenu .titre {
+	margin-left: 10px;	
+}
+.row {
+	margin-left: 0px;
+}
+.video_nom {
+	text-align: center;
+	height: 20px;
+  background-color: #F7AA1E;
+}
+.video{
+  margin: 4px 6px 0px 0px;
+}
+.image{
+	margin: 4px 4px 0px 0px;
+  width:150px;
+}
+#images_grid {
+}
+#images_grid .img {
+	max-height: 115px;
+}

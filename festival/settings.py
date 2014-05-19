@@ -137,7 +137,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    # fanfar-folizzz festival website
     'festival',
+    # google maps widget 
     'easy_maps',
 )
 

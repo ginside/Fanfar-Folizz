@@ -10,28 +10,36 @@
 
 {%block contenu %}
 	<div id = "media">
-		bla {{ dernier_festival }}
-		<h2>Vidéos:</h2>
-		{% for media in medias %}
+		<h2>Vidéos</h2>
+		<div id="videos_grid" class="row">
+			{% for media in medias %}
 				{% if media.type == "video" %}
-				{{media.nom}}
-					{% autoescape off %}
-						{{media.code}}
-					{% endautoescape %}
+		            <div class= "span5 video">
+						{% autoescape off %}
+							{{media.code}}
+						{% endautoescape %}
+						<div class="video_nom">
+	                       {{media.nom}}
+	                    </div>
+					</div>
 				{% endif %}
-		{% endfor %}			
-		<h2>Images:</h2>
-		{% for media in medias %}
+			{% endfor %}
+		</div>
+		<h2>Images</h2>
+        <div id="images_grid" class="row">
+			{% for media in medias %}
 				{% if media.type == "image" %}
-						<a href = "{{media.fichier.url }}" target= "_blank"><img src="{{ media.fichier|thumbnail }}"  /></a>
+				    <div class="span2 image">
+						<a href = "{{media.fichier.url }}" target= "_blank"><img src="{{ media.fichier|thumbnail }}"/></a>
+					</div>
 				{% endif %}
-		{% endfor %}
-		<h2>Autres documents:</h2>
+			{% endfor %}
+		</div>
+		<h2>Autres documents</h2>
 		{% for media in medias %}
 			{% if media.type == "pdf" %}
-					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="{% static "festival/images/pdf_icon_16x16.gif" %}" />{{ media.nom|capfirst }}
-					</a>
-				{% endif %}
+                <a href="{{ media.fichier.url }}" target = "_blank"> <img src="{% static "festival/images/pdf_icon_16x16.gif" %}" />{{ media.nom|capfirst }}</a>
+			{% endif %}
 		{% endfor %}
 	</div>
 {%endblock contenu %}

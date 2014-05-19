@@ -60,16 +60,20 @@ def groupe_detail(request, groupe_id):
     return render_to_response('festival/groupe_detail.html',RequestContext(request, retour))
     
 def programme(request):
-    """ programme du festival le plus recent en base) """
+    """ programme du festival le plus recent en base """
     try:
         festival = Festival.objects.latest(field_name="date_creation")
     except:
         return render_to_response('festival/accueil.html')
+    
     liste_dates, dates = ([] for i in range(2))
+    
     for evenement in festival.evenements.all():
         dates.append(evenement.heure_passage.date())
-    for date in set(dates):
-        liste_dates.append(date)
+    for activite in festival.activites.all():
+        dates.append(activite.date.date())
+
+    liste_dates = list(set(dates))
     liste_dates.sort()
     
     retour = {

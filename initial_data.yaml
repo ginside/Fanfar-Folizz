@@ -42,7 +42,6 @@
     origine: France
 
 #EVENEMENT
-
 - model: festival.evenement
   pk: 1
   fields:
@@ -63,6 +62,13 @@
     groupe: 2
     lieu: "Chez Gégé"
     heure_passage: "2013-01-02T00:30:00+02:00"
+    
+#- model: festival.evenement
+#  pk: 3
+#  fields:
+#    groupe: 5
+#    lieu: "Place du marché"
+#    heure_passage: "2013-01-03T00:30:00+02:00"
 
 #ACTIVITE
 
@@ -90,20 +96,137 @@
   fields:
     nom: Tuto serviettage
     adresse: "http://www.youtube.com/watch?v=15GHT00sstk"
-    fichier: files/29545218_150x150.jpg
     festival: 2
-
+    
+- model: festival.media
+  pk: 19
+  fields:
+    adresse: "http://www.dailymotion.com/video/x1685sz_une-fanfare-rend-hommage-a-michael-jackson-lors-d-un-match_music"
+    festival: 2
+    
+- model: festival.media
+  pk: 20
+  fields:
+    nom: La Bandas Velay
+    adresse: "http://www.dailymotion.com/video/x151jf2_la-bandas-velay-synergie-pour-l-envol-des-anges-2013_music"
+    festival: 2  
+  
+#MEDIA IMAGES 
+- model: festival.media
+  pk: 1
+  fields:
+    nom: Image
+    fichier: "images/100_0861.jpg"
+    festival: 2
 
 - model: festival.media
   pk: 2
   fields:
     nom: Image
-    fichier: images/vietnam_big.jpg
+    fichier: "images/0908Nogent0543.JPG"
     festival: 2
-    
 
 - model: festival.media
   pk: 3
+  fields:
+    nom: Image
+    fichier: "images/100_0862.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 4
+  fields:
+    nom: Image
+    fichier: "images/100_0854.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 5
+  fields:
+    nom: Image
+    fichier: "images/29 08 09  1.bmp"
+    festival: 2
+
+- model: festival.media
+  pk: 6
+  fields:
+    nom: Image
+    fichier: "images/29 08 09 2.bmp"
+    festival: 2
+
+- model: festival.media
+  pk: 7
+  fields:
+    nom: Image
+    fichier: "images/0908Nogent0425.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 8
+  fields:
+    nom: Image
+    fichier: "images/0908Nogent0435.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 9
+  fields:
+    nom: Image
+    fichier: "images/100_0847.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 10
+  fields:
+    nom: Image
+    fichier: "images/0908Nogent0751.JPG"
+    festival: 2
+
+- model: festival.media
+  pk: 11
+  fields:
+    nom: Image
+    fichier: "images/n584995633_4125460_6120.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 12
+  fields:
+    nom: Image
+    fichier: "images/n584995633_4286140_3329.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 13
+  fields:
+    nom: Image
+    fichier: "images/n584995633_4286112_462.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 14
+  fields:
+    nom: Image
+    fichier: "images/n584995633_4286114_1002.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 15
+  fields:
+    nom: Image
+    fichier: "images/n584995633_4286113_818.jpg"
+    festival: 2
+
+- model: festival.media
+  pk: 16
+  fields:
+    nom: Image
+    fichier: "images/Affiche festival.TIF"
+    festival: 2
+
+#MEDIA FICHIERS
+- model: festival.media
+  pk: 200
   fields:
     nom: Test de fichier PDF
     fichier: files/pdf-test.pdf
@@ -170,3 +293,56 @@
   fields:
     adresse: http://www.francedidgeridoo.com
     description: France didge
+
+#AUTH
+- model: auth.user
+  pk: 1
+  fields:
+    username: daniel
+    first_name: daniel
+    last_name: francois
+    is_active: true
+    is_superuser: true
+    is_staff: true
+    password: daniel
+    date_joined: "2010-06-01 12:00:00+02:00"
+
+
+- model: auth.user
+  pk: 2
+  fields:
+    username: eric
+    first_name: eric
+    last_name: bottier
+    is_active: true
+    is_superuser: true
+    is_staff: true
+    password: bottier
+    date_joined: "2010-06-01 12:00:00+02:00"
+    
+#NEWS
+- model: festival.article
+  pk: 1
+  fields:
+    titre: "Un exemple d'article"
+    contenu: "Le texte d'exemple pour mon exemple d'article"
+    date: "2012-12-28T06:00:00+02:00"
+    auteur: 1
+
+- model: festival.article
+  pk: 2
+  fields:
+    titre: "C'est Noël!"
+    contenu: "Alors joyeux Noël !!!"
+    date: "2013-12-25T08:00:00+02:00"
+    auteur: 1
+
+- model: festival.article
+  pk: 3
+  fields:
+    titre: "L'édition 2014 est annoncée !"
+    contenu: "Les Fanfar FolizZz 2014 sont annoncées pour aout à Nogent-Le-Rotrou! Ca va être l'éclate totale wahooo !!"
+    date: "2014-05-17T10:00:00+02:00"
+    auteur: 2
+
+    

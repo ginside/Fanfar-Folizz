@@ -3,16 +3,16 @@ body {
 	margin: 10px auto;
 	font-size: medium;
 	font-weight: normal;
-font-family: 'PT Sans', sans-serif;
-/* font-family: 'Kreon', serif; */
+  font-family: 'PT Sans', sans-serif;
 	color: black;
 	font-size: 15px;
 }
 
 h1,h2 {
   font-weight: bold;
+  font-family: 'Delius', cursive;
 }
-h1{
+h1 {
   font-size: 40px;
   border-bottom: 2px solid #F7931E;
   overflow:visible;
@@ -22,7 +22,6 @@ h2 {
 font-size: 30px;
 }
 .titre {
-/*   font-family: 'Architects Daughter', cursive; */
 font-family: 'Delius', cursive;
 }
 .titre h1 {
@@ -146,10 +145,4 @@ position: relative;
 
 #bottom img {
 	float:left;
-}
-.news_footer {
-	float: right;
-}
-.news {
-	margin-bottom: 5px;
 }
