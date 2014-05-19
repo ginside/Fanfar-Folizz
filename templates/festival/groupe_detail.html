@@ -4,9 +4,9 @@
 {% block css %}
     {{ block.super }}
     <link href="{% static "festival/css/Groupe_detail.css" %}" rel="stylesheet" type="text/css"/>
-{% endblock %}
+{% endblock css %}
 
-{%block titre %}{{groupe.nom}}{%endblock %}
+{%block titre %}{{groupe.nom}}{%endblock titre %}
 
 {%block contenu %}
 	<div id="groupe_detail">
@@ -26,4 +26,4 @@
 				</div>
 				
 	</div>
-{%endblock %}
+{%endblock contenu %}

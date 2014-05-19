@@ -1,6 +1,6 @@
 {% extends "festival/__l_simple.html" %} 
 
-{% block titre %}Accueil{% endblock %}
+{% block titre %}Accueil{% endblock titre %}
 
 {% block contenu %}
     <p>
@@ -19,4 +19,4 @@
     </ul>
     
      {% include "festival/_news_liste.html" with news=news %}
-{% endblock %}
+{% endblock contenu %}

@@ -10,7 +10,7 @@
 			<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
             <link href="{% static "festival/css/Bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
             <link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
-		{% endblock %}
+		{% endblock css %}
         
 		<style type="text/css">
 			#footer_div
@@ -23,7 +23,7 @@
 			}
 		</style>
 		
-		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock %}</title>
+		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock titre %}</title>
 	</head>
 	<body>
 		<div id="main">
@@ -36,9 +36,9 @@
 					<div id="div_contenu">
 					    <div id="contenu">
 							<div class="titre">
-							     <h1>{% block soustitre %}Fanfar FolizZz{% endblock %}</h1>
+							     <h1>{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
 							</div>
-							{% block contenu %}{% endblock %}
+							{% block contenu %}{% endblock contenu %}
 						</div>
 				</div>
 			</div>
