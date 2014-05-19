@@ -26,14 +26,14 @@ def sponsors(request):
     retour = {
         'sponsors' : Sponsor.objects.all(),
     }
-    return render_to_response('festival/accueil_sponsors.html',RequestContext(request, retour))
+    return render_to_response('festival/sponsors.html',RequestContext(request, retour))
     
 def liens(request):
     """liens divers."""
     retour = {
         'liens' : Lien.objects.all(),
     }
-    return render_to_response('festival/accueil_liens.html',RequestContext(request, retour))
+    return render_to_response('festival/liens.html',RequestContext(request, retour))
     
 def infos(request):
     """infos pratiques."""
@@ -41,7 +41,7 @@ def infos(request):
         'infos' : InformationsPratique.objects.all(),
     }
     
-    return render_to_response('festival/accueil_infos.html',RequestContext(request, retour))
+    return render_to_response('festival/infos_pratiques.html',RequestContext(request, retour))
     
 def groupes(request):
     """liste des groupes en base."""
@@ -49,7 +49,7 @@ def groupes(request):
         'groupes' : Groupe.objects.all(),
     }
     
-    return render_to_response('festival/accueil_groupes.html',RequestContext(request, retour))
+    return render_to_response('festival/groupes.html',RequestContext(request, retour))
     
 def groupe_detail(request, groupe_id):
     """ detail d un groupe"""
@@ -57,7 +57,7 @@ def groupe_detail(request, groupe_id):
     retour = {
         'groupe' : groupe,
     }
-    return render_to_response('festival/accueil_detail_groupe.html',RequestContext(request, retour))
+    return render_to_response('festival/groupe_detail.html',RequestContext(request, retour))
     
 def programme(request):
     """ programme du festival le plus recent en base) """
@@ -76,7 +76,7 @@ def programme(request):
         'festival' : festival,
         'dates' : liste_dates,
     }
-    return render_to_response('festival/accueil_programme.html',RequestContext(request, retour))
+    return render_to_response('festival/programme.html',RequestContext(request, retour))
     
 def medias(request):
     """ vidéos, images et pdfs """
@@ -94,7 +94,7 @@ def medias(request):
         'medias' : medias,
         'def' : dernier_festival.id,
     }
-    return render_to_response('festival/accueil_medias.html',RequestContext(request, retour))
+    return render_to_response('festival/medias.html',RequestContext(request, retour))
     
 def historique(request):
     """historique des précédentes éditions, médias"""
@@ -136,10 +136,10 @@ def historique(request):
                 'medias' : medias,
                 'historique' : historique,
                 }
-    return render_to_response('festival/accueil_historique.html',RequestContext(request, retour))
+    return render_to_response('festival/historique.html',RequestContext(request, retour))
 
 def news(request):
     retour = {
         'news' : Article.objects.all().order_by('date')[:10]
     }
-    return render_to_response('festival/news.html',RequestContext(request, retour))
+    return render_to_response('festival/_news.html',RequestContext(request, retour))
