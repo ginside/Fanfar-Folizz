@@ -1,0 +1,16 @@
+<div id="groupe{{groupe.id}}" class = "groupe">
+	<div class ="div_nom_groupe">
+	    <span class="nom_groupe">
+           <a href="{% url "festival.views.groupes" %}{{groupe.id}}/">{{groupe.nom|upper}}</a>
+        </span>
+        <span class="origine_groupe">
+           {{groupe.origine}}
+        </span>
+    </div>
+	<img
+		{% if groupe.photo.width > 150 %}
+			width = "300"
+		{% endif %}
+		 src="{{ MEDIA_URL }}{{groupe.photo}}"
+	 />
+</div>

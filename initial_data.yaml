@@ -32,6 +32,14 @@
     photo: images/2be3_4.jpg
     description: des oufs malades
     origine: Écosse
+- model: festival.groupe
+  pk: 5
+  fields:
+    nom: Les étouffe Chrétien
+    style: Heavy Punk
+    photo: images/146813.jpg
+    description: des oufs malades
+    origine: France
 
 #EVENEMENT
 

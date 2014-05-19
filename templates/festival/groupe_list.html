@@ -1,0 +1,26 @@
+{% extends "festival/__l_simple.html" %}
+{% load staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static "festival/css/Groupe.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+
+{%block titre %}Les Groupes{%endblock titre %}
+
+{%block contenu %}
+	<div id="groupes_gauche">
+		{% for groupe in groupes %}
+		  {% if groupe.id|divisibleby:2 %}
+		      {% include "festival/_groupe_list_item.html" with groupe=groupe %}
+		  {% endif %}
+		{% endfor %}
+	</div>
+    <div id="groupes_droite">
+        {% for groupe in groupes %}
+          {% if not groupe.id|divisibleby:2 %}
+              {% include "festival/_groupe_list_item.html" with groupe=groupe %}
+          {% endif %}
+        {% endfor %}
+    </div>
+{%endblock contenu %}

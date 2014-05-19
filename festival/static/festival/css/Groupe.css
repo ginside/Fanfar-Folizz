@@ -1,7 +1,7 @@
 .groupe
 {
 float:left;
-width:50%;
+width:100%;
 margin-bottom: 10px;
 }
 #groupes
@@ -28,4 +28,17 @@ margin-bottom: 10px;
 float: right;
 margin-right: 10px;
 font-style:italic;
+}
+
+#groupes_gauche {
+	float: left;
+}
+#groupes_droite {
+  float: left;
+}
+
+#groupes_droite,
+#groupes_gauche {
+  width:50%;
+  height:100%;
 }

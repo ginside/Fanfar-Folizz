@@ -49,7 +49,7 @@ def groupes(request):
         'groupes' : Groupe.objects.all(),
     }
     
-    return render_to_response('festival/groupes.html',RequestContext(request, retour))
+    return render_to_response('festival/groupe_list.html',RequestContext(request, retour))
     
 def groupe_detail(request, groupe_id):
     """ detail d un groupe"""
