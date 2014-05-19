@@ -1,6 +1,21 @@
-.news_footer {
-  float: right;
-}
 .news {
   margin: 25px 0px;
+}
+.news_titre {
+	
+  font-weight: bold;
+  font-family: 'Delius', cursive;
+font-size: 25px;
+}
+.news_auteur {
+	float: right;
+}
+
+.news_contenu {
+	margin: 30px 0px;
+}
+.news_footer {
+	width:50%;
+	margin: auto;
+  border-bottom: 1px solid #EDEDED;
 }

@@ -1,13 +1,20 @@
+{% load staticfiles %}
+
 <div id="news">
 	{% for new in news %}
 	<div id="news_{{new.id}}" class="news">
-	    <div class="news_titre"><h2>{{ new.titre|title }}</h2></div>
+	    <div class="news_header">
+		    <span class="news_titre">
+		      <img src="{% static "festival/images/puce_style.jpg" %}"/>
+		      {{ new.titre|title }}
+		    </span>
+		    <span class="news_auteur">{{ new.auteur }} - {{new.date|date:"H\hi j/m/Y"}}</span> 
+	    </div>
 	    <div class="news_contenu">
 	        {{ new.contenu }}
 	    </div>
 		<div class="news_footer">
-    		<i> écrit par {{ new.auteur }} - {{new.date|date:"H\hi j/m/Y"}}</i> 
-		</div>
+    		</div>
 	</div>
 	{% endfor %}
 </div>
