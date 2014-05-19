@@ -1,7 +1,11 @@
 {% extends "festival/__l_simple.html" %}
 {% load festival_extras %}
+{% load staticfiles %}
 
-{% block css %}Media.css{%endblock%}
+{% block css %}
+    {{ block.super }}
+    <link href="{% static "festival/css/Media.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
 
 {%block titre %}Medias{%endblock %}
 
@@ -26,7 +30,7 @@
 		<h2>Autres documents:</h2>
 		{% for media in medias %}
 			{% if media.type == "pdf" %}
-					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="{{ MEDIA_URL }}images/static/pdf_icon_16x16.gif" />{{ media.nom|capfirst }}
+					<a href="{{ media.fichier.url }}" target = "_blank"> <img src="{% static "festival/images/pdf_icon_16x16.gif" %}" />{{ media.nom|capfirst }}
 					</a>
 				{% endif %}
 		{% endfor %}

@@ -1,65 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% load staticfiles %}
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; 
-		charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
 		
-        <link href="{{ MEDIA_URL }}css/Bootstrap/bootstrap.css"     rel="stylesheet" />
-		<link href="{{ MEDIA_URL }}css/Global.css" rel="stylesheet" media="screen" type="text/css"/>
-        <link href='http://fonts.googleapis.com/css?family=Delius'  rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-		
+		{% block css %}
+	        <link href="http://fonts.googleapis.com/css?family=Delius"  rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+            <link href="{% static "festival/css/Bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
+            <link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
+		{% endblock %}
         
-		<link href="{{ MEDIA_URL }}css/Accueil.css" rel="stylesheet" media="screen" type="text/css"/>
-		<link href="{{ MEDIA_URL }}css/{% block css %}Accueil.css{% endblock %}" rel="stylesheet" media="screen" type="text/css"/>  
-		{% block more_css %}{% endblock %}
 		<style type="text/css">
 			#footer_div
 			{
-				background-image: 			url("{{ MEDIA_URL }}images/static/footer_x_repeat.jpg");
+				background-image: 			url("{% static "festival/images/footer_x_repeat.jpg" %}");
 			}
 			#contenu
 			{
-			    list-style-image: 			url("{{ MEDIA_URL }}images/static/puce_style.jpg");
+			    list-style-image: 			url("{% static "festival/images/puce_style.jpg" %}");
 			}
 		</style>
 		
-		<title>Les fanfar' folizzz - {% block titre %}Accueil{% endblock %}</title>
+		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock %}</title>
 	</head>
 	<body>
 		<div id="main">
 			<div id="top">
-				<img src="{{ MEDIA_URL }}images/static/fanfare_banniere.jpg"/>
+				<img src="{% static "festival/images/fanfare_banniere.jpg" %}"/>
 			</div>
 			<div id="menu">
-			     <div id="boutons_menu" class="titre">
-					<ul><li>::</li>
-						<li><a href="{% url "festival.views.accueil" %}">Accueil</a></li><li>::</li>
-						<li><a href="{% url "festival.views.groupes" %}">Les groupes</a></li><li>::</li>
-						<li><a href="{% url "festival.views.programme" %}">Le Programme</a></li><li>::</li>
-						<li><a href="{% url "festival.views.medias" %}">Medias</a></li><li>::</li>
-						<!-- <li><a href="{% url "festival.views.historique" %}">Precedentes editions</a></li><li>::</li> -->
-						<li><a href="{% url "festival.views.infos" %}">Infos pratiques</a></li><li>::</li>
-						<li><a href="{% url "festival.views.liens" %}">Liens</a></li><li>::</li>
-						<li><a href="{% url "festival.views.sponsors" %}">Partenaires</a></li><li>::</li>
-					</ul>
-                </div>		
+				{% include "festival/_top_menubar.html" %}
 			</div>
 					<div id="div_contenu">
 					    <div id="contenu">
-							<span class="titre"><h1>{% block soustitre %}Accueil{% endblock %}</h1></span>
+							<div class="titre">
+							     <h1>{% block soustitre %}Fanfar FolizZz{% endblock %}</h1>
+							</div>
 							{% block contenu %}{% endblock %}
 						</div>
 				</div>
 			</div>
 			<div id="bottom">
-			     <img src="{{ MEDIA_URL }}images/static/footer_audessus_centrer3.jpg"/>
+			     <img src="{% static "festival/images/footer_audessus_centrer.jpg" %}"/>
 			</div>
 			<div id="footer_div">
 			     <div id="footer">
-                    <span style="background-color: black">
-Copyright Fanfar-folizzz 2011! Tous droits reserves! Etc etc!</span>
+                    <span id="footer_copyright">Copyright Fanfar-folizzz 2011! Tous droits reserves! Etc etc!</span>
                 </div>
 			</div>
 		</div>

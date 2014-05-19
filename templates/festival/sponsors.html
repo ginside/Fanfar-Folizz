@@ -1,6 +1,10 @@
 {% extends "festival/__l_simple.html" %}
+{% load staticfiles %}
 
-{% block css %}Sponsors.css{%endblock%}
+{% block css %}
+    {{ block.super }}
+    <link href='{% static "festival/css/Sponsors.css" %}' rel='stylesheet' type='text/css'/>
+{% endblock %}
 
 {%block titre %}Partenaires{%endblock %}
 
