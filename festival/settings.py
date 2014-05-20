@@ -8,7 +8,7 @@ TEMPLATE_DEBUG = DEBUG
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = BASE_DIR
 
-BASE_URL = '/'
+BASE_URL = ''
 if 'FANFAR_BASE_URL' in os.environ.keys():
     BASE_URL = os.environ['FANFAR_BASE_URL']
 
