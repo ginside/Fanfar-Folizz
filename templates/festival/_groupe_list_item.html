@@ -7,10 +7,5 @@
            {{groupe.origine}}
         </span>
     </div>
-	<img
-		{% if groupe.photo.width > 150 %}
-			width = "300"
-		{% endif %}
-		 src="{{ MEDIA_URL }}{{groupe.photo}}"
-	 />
+	<img src="{{ MEDIA_URL }}{{groupe.photo}}"  {% if groupe.photo.width > 150 %}style="width: 300px;"{% endif %}/>
 </div>

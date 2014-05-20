@@ -50,6 +50,9 @@
   color: gray;
   display:inline;
 }
+.nom_evenement {
+  height: 20px;
+}
 .nom_evenement .nom{
   margin: 5px 0px 5px 10px ;
   float: left;
