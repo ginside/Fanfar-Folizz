@@ -8,7 +8,7 @@ class EvenementAdmin(admin.ModelAdmin):
     fields = ['groupe','lieu','heure_passage']
     
 class ActiviteAdmin(admin.ModelAdmin):
-    fields = ['qui','quoi','lieu','date','autres_informations']
+    fields = ['qui','quoi','lieu','photo','date','autres_informations']
 
 class FestivalAdmin(admin.ModelAdmin):
     fields = ['nom','evenements','activites','historise']

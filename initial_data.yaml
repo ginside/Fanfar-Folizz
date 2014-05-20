@@ -78,6 +78,7 @@
     qui: Bozo le clown
     quoi: cours de maquillage
     lieu: place du village
+    photo: images/atelier-maquillage.png
     date: "2013-01-01T17:00:00+02:00"
     autres_informations: rien
 
@@ -87,6 +88,7 @@
     qui: Dorothée
     quoi: chanson
     lieu: eglise
+    photo: images/33482727_1.jpg
     date: "2013-01-02T06:00:00+02:00"
     autres_informations: rien
 
@@ -296,9 +298,9 @@
 
 #AUTH
 - model: auth.user
-  pk: 1
+  pk: 2
   fields:
-    username: daniel
+    username: dada
     first_name: daniel
     last_name: francois
     is_active: true
@@ -309,7 +311,7 @@
 
 
 - model: auth.user
-  pk: 2
+  pk: 3
   fields:
     username: eric
     first_name: eric
@@ -327,7 +329,7 @@
     titre: "Un exemple d'article"
     contenu: "Le texte d'exemple pour mon exemple d'article"
     date: "2012-12-28T06:00:00+02:00"
-    auteur: 1
+    auteur: 2
 
 - model: festival.article
   pk: 2
@@ -335,7 +337,7 @@
     titre: "C'est Noël!"
     contenu: "Alors joyeux Noël !!!"
     date: "2013-12-25T08:00:00+02:00"
-    auteur: 1
+    auteur: 2
 
 - model: festival.article
   pk: 3
@@ -343,6 +345,6 @@
     titre: "L'édition 2014 est annoncée !"
     contenu: "Les Fanfar FolizZz 2014 sont annoncées pour aout à Nogent-Le-Rotrou! Ca va être l'éclate totale wahooo !!"
     date: "2014-05-17T10:00:00+02:00"
-    auteur: 2
+    auteur: 3
 
     

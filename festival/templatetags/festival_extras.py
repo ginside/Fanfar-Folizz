@@ -2,20 +2,21 @@
 
 import os
 from PIL import Image
-from django.template import Library
+from django import template
+import random
 
-register = Library()
+register = template.Library()
 
-def thumbnail(file, size='150x150'):
+def thumbnail(my_file, size='150x150'):
     # defining the size
     x, y = [int(x) for x in size.split('x')]
     # defining the filename and the miniature filename
-    filehead, filetail = os.path.split(file.path)
-    basename, format = os.path.splitext(filetail)
-    miniature = basename + '_' + size + format
-    filename = file.path
+    filehead, filetail = os.path.split(my_file.path)
+    basename, my_format = os.path.splitext(filetail)
+    miniature = basename + '_' + size + my_format
+    filename = my_file.path
     miniature_filename = os.path.join(filehead, miniature)
-    filehead, filetail = os.path.split(file.url)
+    filehead, filetail = os.path.split(my_file.url)
     miniature_url = filehead + '/' + miniature
     if os.path.exists(miniature_filename) and os.path.getmtime(filename)>os.path.getmtime(miniature_filename):
         os.unlink(miniature_filename)
@@ -30,4 +31,18 @@ def thumbnail(file, size='150x150'):
 
     return miniature_url
 
+
+
+class RandomMusicSignNode(template.Node):
+    """ Prints a random music symbol """
+    def __init__(self):
+        self.music_html_signs = ["&#9833;","&#9834;","&#9835;","&#9836;","&#9837;","&#9838;","&#9839;"]
+    def render(self, context):
+        return random.choice(self.music_html_signs)
+
+def do_random_music_sign(parser, token):
+    return RandomMusicSignNode()
+
+
 register.filter(thumbnail)
+register.tag('random_music_sign',do_random_music_sign)

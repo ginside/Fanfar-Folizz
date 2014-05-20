@@ -1,13 +1,21 @@
- <div class="programme_concert_horaire">
-    <div class="horaire">
-        {{concert.heure_passage|date:"H:i"}}
+ {% load festival_extras %}
+ <div class="programme_evenement_horaire concert">
+    <div class="horaire_lieu">
+        <div class="horaire">{{concert.heure_passage|date:"H:i"}}</div>
+        <div class="lieu"></div>
     </div>
 </div>
-<div class="programme_concert_groupe">
-    <div class="nom_groupe">
-		<a href="{% url "festival.views.groupes" %}{{concert.groupe.id}}/" >
-		    {{concert.groupe.nom|upper}}
-		</a> 
+<div class="programme_evenement_detail">
+    <div class="nom_evenement">
+        <div class="nom">
+			<a href="{% url "festival.views.groupe_detail" groupe_id=concert.groupe.id %}" >
+			    {{concert.groupe.nom|upper}}
+			</a> 
+		</div>
+		<div class="icone_concert">{% random_music_sign %}</div>
+	</div>
+	<div class="image_groupe"
+         style='background: #eee url("{{ MEDIA_URL }}{{concert.groupe.photo}}") center 35%;'>
 	</div>
 	<!-- ({{concert.lieu}})-->
 </div>

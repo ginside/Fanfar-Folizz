@@ -30,8 +30,13 @@ class Activite(models.Model):
     qui = models.CharField(max_length = 50)
     quoi = models.TextField()
     lieu = models.CharField(max_length = 50)
+    photo = models.ImageField(upload_to = "images", blank = True)
     date = models.DateTimeField()
     autres_informations = models.TextField()
+    def __str__(self):
+        return self.qui + " - " + self.quoi + str(self.date)
+    def __unicode__(self):
+        return unicode(self.__str__())
         
 class Festival(models.Model):
     nom = models.CharField(max_length = 50)
@@ -39,15 +44,16 @@ class Festival(models.Model):
     activites = models.ManyToManyField(Activite, blank = True)
     date_creation = models.DateTimeField(auto_now_add = True, blank = True)
     historise = models.BooleanField()
-    
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
+    def __unicode__(self):
+        return unicode(self.__str__())
 
 class Media(models.Model):
     nom = models.CharField(max_length = 50)
     adresse = models.URLField(blank = True)
-    fichier = models.FileField(upload_to = "files/",blank = "True")
-    festival = models.ForeignKey('Festival', blank = "True", null = "True")
+    fichier = models.FileField(upload_to = "files/",blank = True)
+    festival = models.ForeignKey('Festival', blank = True, null = True)
     
     def __unicode__(self):
         return unicode(self.festival) + unicode(" - ") + self.nom
@@ -89,7 +95,7 @@ class Media(models.Model):
 class Sponsor(models.Model):
     nom = models.CharField(max_length = 50)
     logo = models.ImageField(upload_to="images")
-    description = models.CharField(max_length = 50,blank = "true")
+    description = models.CharField(max_length = 50,blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -120,7 +126,7 @@ class Historique(models.Model):
 
 class Lien(models.Model):
     adresse = models.URLField()
-    description = models.CharField(max_length = 200,blank = "true")
+    description = models.CharField(max_length = 200,blank = True)
     
     def __unicode__(self):
         return self.adresse

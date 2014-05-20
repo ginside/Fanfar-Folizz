@@ -1,12 +1,18 @@
- <div class="programme_activite_horaire">
-    <div class="horaire">
-        {{activite.date|date:"H:i"}}
+ <div class="programme_evenement_horaire activite">
+    <div class="horaire_lieu">
+        <div class="horaire">{{activite.date|date:"H:i"}}</div>
+        <div class="lieu"> {{activite.lieu}}</div>
     </div>
 </div>
-<div class="programme_concert_groupe">
-    <div class="nom_groupe">
-	    {{activite.quoi|upper}}
+<div class="programme_evenement_detail">
+    <div class="nom_evenement">
+        <div class="nom">
+	       {{activite.quoi|upper}}
+	    </div>
+        <div class="icone_activite">&#9836;</div>
 	</div>
-	<div class="activite_lieu"> {{activite.lieu}}</div>
+    <div class="image_groupe"
+         style='background: #eee url("{{ MEDIA_URL }}{{activite.photo}}") center 35%;'>
+    </div>
 </div>
 <!-- {{activite.autres_informations}} -->

@@ -1,49 +1,92 @@
 @CHARSET "ISO-8859-1";
 
+
+.programme_jour {
+  text-align: center;
+  font-size: xx-large;
+  height: 90px;
+  line-height: 90px;
+}
+
+/* COMMUN */
+
+.programme_jour,
+.programme_concert,
+.programme_activite {
+  background-color: #EDEDED;
+}
+
 .programme_concert,
 .programme_activite {
   font-size: x-large;
 	width: 100%;
-	height: 150px;
-	background-color: #F5F5F5;
-	margin: 2px 0px;
+	height: 200px;
+	margin: 0px;
 	position: relative;
 }
-.programme_concert_horaire,
-.programme_activite_horaire {
-	width: 100%;
-	height: 30px;
-	line-height: 30px;
-  background-color: #F7AA1E;
+
+.programme_evenement_horaire {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
   color: white;
-  margin: 2px 10px 2px 0px;
-}
-.programme_concert_groupe {
-  height: 60px;
-}
-#programme_grid .nom_groupe{
-  margin: 10px;
-	
-}
-.horaire {
-	margin-left: 10px;
-}
-.programme_jour {
-  background-color: #F0F0F0;
-	text-align: center;
-	font-size: xx-large;
-	height: 90px;
-	line-height: 90px;
+  margin: 0px 10px 2px 0px;
 }
 
-.programme_concert_groupe a {
+.horaire_lieu {
+  margin-left: 10px;
+  
 }
-.programme_activite_horaire {
+.horaire {
+	width: 30%;
+	float: left;
+}
+.lieu {
+	float: right;
+  margin-right: 10px;
+  font-size: smaller;
+  margin-right: 5px;
+  font-style: oblique;
+  color: gray;
+  display:inline;
+}
+.nom_evenement .nom{
+  margin: 5px 0px 5px 10px ;
+  float: left;
+}
+.icone_concert,
+.icone_activite {
+  float: right;
+  margin: 5px 10px 5px 0px;
+}
+
+/* CONCERT */
+
+.programme_evenement_detail {
+  height: 170px;
+  margin-bottom: 4px;
+}
+.concert {
+  background-color: #F7AA1E;
+}
+
+.programme_evenement_detail a {
+}
+
+.image_groupe {
+  overflow: hidden;
+  height: 142px;
+  width: 100%;
+}
+.icone_concert {
+	color: #F7AA1E;
+}
+/* ACTIVITE */
+
+.activite {
   background-color: #76D4C4;
 }
-.activite_lieu {
-	font-size: smaller;
-	margin-left: 20px;
-	font-style: oblique;
-	color: gray;
+.icone_activite {
+  color: #76D4C4;
 }
+

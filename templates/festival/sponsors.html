@@ -6,14 +6,21 @@
     <link href='{% static "festival/css/Sponsors.css" %}' rel='stylesheet' type='text/css'/>
 {% endblock css %}
 
-{%block titre %}Partenaires{%endblock %}
+{%block titre %}Nos Partenaires{%endblock %}
 
 {%block contenu %}
-	<div id="sponsors">
+	<div id="sponsors" class="row">
 		{% for sponsor in sponsors %}
-			<div id="sponsor{{sponsor.id}}" class="sponsor_detail">
-					<img width = "400" src="{{ MEDIA_URL }}{{sponsor.logo }}"/><br>{{sponsor.nom}}: {{sponsor.description}}
+			<div class="sponsor_detail span4">
+			     <h3>{{sponsor.nom}}</h3>
+			     {% if sponsor.description %}
+			         <p>{{sponsor.description}}</p>
+			     {% endif %} 
 			</div>
+			
+            <div id="sponsor{{sponsor.id}}" class="sponsor_image span4">
+                    <img width = "400" src="{{ MEDIA_URL }}{{sponsor.logo }}"/>
+            </div>
 		{% empty %}
 		<ul>
 			<li id="sponsor0">

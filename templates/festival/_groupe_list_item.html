@@ -1,7 +1,7 @@
 <div id="groupe{{groupe.id}}" class = "groupe">
 	<div class ="div_nom_groupe">
 	    <span class="nom_groupe">
-           <a href="{% url "festival.views.groupes" %}{{groupe.id}}/">{{groupe.nom|upper}}</a>
+           <a href="{% url "festival.views.groupe_detail" groupe_id=groupe.id %}">{{groupe.nom|upper}}</a>
         </span>
         <span class="origine_groupe">
            {{groupe.origine}}
