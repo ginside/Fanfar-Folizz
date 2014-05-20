@@ -8,7 +8,9 @@ TEMPLATE_DEBUG = DEBUG
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = BASE_DIR
 
-
+BASE_URL = '/'
+if 'FANFAR_BASE_URL' in os.environ.keys():
+    BASE_URL = os.environ['FANFAR_BASE_URL']
 
 ALLOWED_HOSTS = []
 
@@ -84,9 +86,7 @@ ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 
-MEDIA_URL = '/../fanfar/media/'
-if APP_ENV == 'dev' :
-    MEDIA_URL = '/../media/'   
+MEDIA_URL = BASE_URL + '/media/'   
       
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -146,5 +146,5 @@ INSTALLED_APPS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_URL = BASE_URL + '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
