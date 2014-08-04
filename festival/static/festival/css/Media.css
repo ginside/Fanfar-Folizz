@@ -1,6 +1,3 @@
-#div_contenu {
-	width: 816px;
-}
 #contenu {
 	width: 100%;
 	margin: 15px 0px ;
@@ -8,8 +5,9 @@
 #div_contenu .titre {
 	margin-left: 10px;	
 }
-.row {
-	margin-left: 0px;
+.video_frame {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .video_nom {
 	text-align: center;
@@ -17,7 +15,7 @@
   background-color: #F7AA1E;
 }
 .video{
-  margin: 4px 6px 0px 0px;
+  margin: 4px 4px 0px 0px;
 }
 .image{
 	margin: 4px 4px 0px 0px;
@@ -26,5 +24,5 @@
 #images_grid {
 }
 #images_grid .img {
-	max-height: 115px;
+/* 	max-height: 115px; */
 }

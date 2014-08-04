@@ -1,5 +1,5 @@
-from django.conf.urls import patterns, include, url
-import settings
+from django.conf.urls import patterns, include
+from festival import settings
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^fanfar-folizz/infosPratiques/$','festival.views.infos'),
     (r'^fanfar-folizz/groupes/$', 'festival.views.groupes'),
     (r'^fanfar-folizz/groupes/(?P<groupe_id>\d+)/$', 'festival.views.groupe_detail'),
+    (r'^fanfar-folizz/activite/(?P<activite_id>\d+)/$', 'festival.views.activite_detail'),
     (r'^fanfar-folizz/programme/$', 'festival.views.programme'),
     (r'^fanfar-folizz/medias/$', 'festival.views.medias'),
     (r'^fanfar-folizz/historique/$','festival.views.historique'),

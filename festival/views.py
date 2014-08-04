@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.http import HttpResponse
-from datetime import date 
 from django.shortcuts import render_to_response
 from festival.models import Sponsor,Lien,InformationsPratique,Groupe,Festival,Activite,Media,Article
-from django.conf import settings 
 from django.template.context import RequestContext
-from django.core.urlresolvers import reverse
 
 def index(request):
     """page de depart. separation entre les deux sites."""
@@ -15,7 +11,6 @@ def index(request):
 
 def accueil(request):
     """page d'accueil du site du festival."""
-    articles = Article.objects.all().order_by('date')[:10]
     retour = {
         'news' : Article.objects.all().order_by('date')[:10]
     }
@@ -45,8 +40,15 @@ def infos(request):
     
 def groupes(request):
     """liste des groupes en base."""
+    groupes = Groupe.objects.all()
+    i = 0
+    groupes_cols = {0:[],1:[],2:[]}
+    for groupe in groupes:
+        groupes_cols[i].append(groupe)
+        i = (i+1)%3
+        
     retour = {
-        'groupes' : Groupe.objects.all(),
+        'groupes' : groupes_cols,
     }
     
     return render_to_response('festival/groupe_list.html',RequestContext(request, retour))
@@ -66,7 +68,7 @@ def programme(request):
     except:
         return render_to_response('festival/accueil.html')
     
-    liste_dates, dates = ([] for i in range(2))
+    dates = []
     
     for evenement in festival.evenements.all():
         dates.append(evenement.heure_passage.date())
@@ -87,7 +89,7 @@ def medias(request):
     medias = Media.objects.all()
     try:
         #debile
-       dernier_festival = Festival.objects.get(nom__endswith = '2013')
+        dernier_festival = Festival.objects.get(nom__endswith = '2013')
     except:
         return render_to_response('festival/accueil.html', RequestContext(request, {}))
         
@@ -125,7 +127,7 @@ def historique(request):
                         else:
                             media.code = media.adresse
                             continue
-                        media.code = u'<iframe width="380" height="285" src="'+ src +u'" frameborder="0" allowfullscreen></iframe>'
+                        media.code = '<iframe width="380" height="285" src="'+ src +'" frameborder="0" allowfullscreen></iframe>'
                     
                     elif len(media.fichier):
                         extension = str(media.fichier).split(".")[-1]
@@ -147,3 +149,10 @@ def news(request):
         'news' : Article.objects.all().order_by('date')[:10]
     }
     return render_to_response('festival/_news.html',RequestContext(request, retour))
+
+def activite_detail(request, activite_id):
+    activite = Activite.objects.get(id = activite_id)
+    retour =  {
+        'activite' : activite
+    }
+    return render_to_response('festival/activite_detail.html', RequestContext(request, retour))

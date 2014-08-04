@@ -1,4 +1,4 @@
-from models import *
+from festival.models import *
 from django.contrib import admin
 
 class GroupeAdmin(admin.ModelAdmin):

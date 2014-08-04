@@ -1,6 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-
 .programme_jour {
   text-align: center;
   font-size: xx-large;
@@ -14,8 +13,11 @@
 .programme_concert,
 .programme_activite {
   background-color: #EDEDED;
+  overflow: hidden;
 }
-
+.programme_col {
+	max-width: 33%;
+}
 .programme_concert,
 .programme_activite {
   font-size: x-large;

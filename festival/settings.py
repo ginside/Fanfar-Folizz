@@ -15,7 +15,7 @@ if 'FANFAR_BASE_URL' in os.environ.keys():
 ALLOWED_HOSTS = []
 
 APP_ENV = 'production'
-if PROJECT_ROOT.find("workspace") != -1:
+if PROJECT_ROOT.find("workspace") != -1 or sys.platform == "win32":
     APP_ENV = 'dev'
 
 ADMINS = (
@@ -76,7 +76,6 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
 
-#kimsufi distant
 MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
 ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT,'admin-media')
 

@@ -34,44 +34,44 @@ p {
 
 #top {
 	margin: auto;
-	width: 861px;
+	max-width: 861px;
 }
-
+#menu .container-fluid {
+	padding: 0px 6px;
+}
 #menu {
 	font-size: 15px;
 	font-weight: bold;
 	color: #666666;
 	border: 1px black solid;
-	height: 34px;
-	width: 866px;
+	min-height: 34px;
+	
+	max-width: 894px;
 	margin: auto; 
+	padding-top: 5px;
 	-webkit-box-shadow : 0px 4px 4px #DDD;
 	-moz-box-shadow: 0px 4px 4px #DDD;
 	-webkit-box-shadow: 0px 4px 4px #DDD;
 	background-color: white;
+	border-radius: 0px;
 }
-
+#menu .navbar-header {
+	max-height:34px;
+}
+#menu .navbar-header button {
+	max-height:30px;
+	margin-top: 0px;
+	padding-top: 5px;
+}
 #boutons_menu {
-	float: right;
-	position: relative;
-	left: -50%;
-	text-align: left;
+	padding: inherit 0px;
+	margin: 0px;
 }
-
-#boutons_menu ul {
-	/*     margin-top:         		0.3em;  */
-	/*     margin-bottom:      		1%; */
-	margin: 0.3em auto 1% auto;
-	width: 100%;
-	padding: 0;
-	
-list-style:none; 
-position:relative;
-left:50%;
+#boutons_menu li > a{
+	padding	: 0px 2px;
+	line-height: 25px;
 }
-
 #menu li {
-	display: inline;
 	font-weight: bold;
 	margin: 0px 2.5px;
 	letter-spacing: 0.5px;
@@ -81,7 +81,6 @@ left:50%;
 #menu a {
 	color: black;
 	text-decoration: none;
-	margin-left: -7px;
 }
 
 a {
@@ -97,14 +96,9 @@ a:hover {
 
 #div_contenu {
 	border-bottom: none;
-/* 	border-left: 1px solid black; */
-/* 	border-right: 1px solid black; */
 	margin: auto;
 	min-height: 500px;
-/* 	max-height: 700px; */
-/* 	overflow: auto; */
-	width: 796px;
-position: relative;
+	position: relative;
 }
 
 #contenu {
@@ -112,8 +106,6 @@ position: relative;
 }
 
 #bottom {
-	height: 93px;
-	width: 1010px;
 	margin: 0px auto;
 }
 
@@ -143,6 +135,3 @@ position: relative;
   background-color: black
 }
 
-#bottom img {
-	float:left;
-}

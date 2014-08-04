@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from django.utils.encoding import force_unicode
 from django.contrib.auth import get_user_model
 
 class Groupe(models.Model):
@@ -12,7 +11,7 @@ class Groupe(models.Model):
     description = models.TextField()
     
     def __unicode__(self):
-        return self.nom + unicode(" ( ") + self.origine + unicode(" )")
+        return self.nom + " ( " + self.origine + " )"
     def __str__(self):
         return self.nom + str(" ( ") + self.origine + str(" )")
 
@@ -23,8 +22,6 @@ class Evenement(models.Model):
     heure_passage = models.DateTimeField()
     def __str__(self):
         return self.groupe.nom + " - " + str(self.heure_passage)
-    def __unicode__(self):
-        return unicode(self.__str__())
 
 class Activite(models.Model):
     qui = models.CharField(max_length = 50)
@@ -35,9 +32,7 @@ class Activite(models.Model):
     autres_informations = models.TextField()
     def __str__(self):
         return self.qui + " - " + self.quoi + str(self.date)
-    def __unicode__(self):
-        return unicode(self.__str__())
-        
+
 class Festival(models.Model):
     nom = models.CharField(max_length = 50)
     evenements = models.ManyToManyField(Evenement)
@@ -46,17 +41,12 @@ class Festival(models.Model):
     historise = models.BooleanField()
     def __str__(self):
         return self.nom
-    def __unicode__(self):
-        return unicode(self.__str__())
 
 class Media(models.Model):
     nom = models.CharField(max_length = 50)
     adresse = models.URLField(blank = True)
     fichier = models.FileField(upload_to = "files/",blank = True)
     festival = models.ForeignKey('Festival', blank = True, null = True)
-    
-    def __unicode__(self):
-        return unicode(self.festival) + unicode(" - ") + self.nom
     
     def __str__(self):
         festival = "Aucun festival"
@@ -79,8 +69,8 @@ class Media(models.Model):
                 src = 'http://www.dailymotion.com/embed/video/'+ self.adresse.split("/video/")[1].split("_")[0] +'?theme=none&wmode=transparent'
             else:
                 self.code = self.adresse
-            if src:    
-                self.code = u'<iframe width="380" height="285" src="'+ src +u'"     frameborder="0" allowfullscreen></iframe>'
+            if src:    #width="380" height="285"
+                self.code = '<iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video_frame" style="height:250px" src="'+ src +'"     frameborder="0" allowfullscreen></iframe>'
         
         elif len(self.fichier):
             extension = str(self.fichier).split(".")[-1]
@@ -97,9 +87,6 @@ class Sponsor(models.Model):
     logo = models.ImageField(upload_to="images")
     description = models.CharField(max_length = 50,blank = True)
 
-    def __unicode__(self):
-        return self.nom
-
     def __str__(self):
         return self.nom
 
@@ -108,8 +95,6 @@ class InformationsPratique(models.Model):
     carte = models.ImageField(upload_to = "images")
     explications = models.TextField()
     autresInformations = models.TextField()
-    def __unicode__(self):
-        return "Informations Pratiques"
     def __str__(self):
         return "Informations Pratiques"
 
@@ -118,8 +103,6 @@ class Historique(models.Model):
     description = models.TextField()
     dates = models.DateTimeField()
 
-    def __unicode__(self):
-        return "Edition" + self.dates
     def __str__(self):
         return "Edition" + self.dates
 
@@ -128,8 +111,6 @@ class Lien(models.Model):
     adresse = models.URLField()
     description = models.CharField(max_length = 200,blank = True)
     
-    def __unicode__(self):
-        return self.adresse
     def __str__(self):
         return self.adresse
     
@@ -139,7 +120,5 @@ class Article(models.Model):
     date = models.DateTimeField(auto_now = True)
     auteur = models.ForeignKey(get_user_model())
     
-    def __unicode__(self):
-        return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre
     def __str__(self):
         return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre

@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 {% load staticfiles %}
 
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
+		<script src="{% static "festival/js/jquery-2.1.1.js" %}"></script>
+		
+		<script src="{% static "festival/js/bootstrap.js" %}"></script>
 		
 		{% block css %}
 	        <link href="http://fonts.googleapis.com/css?family=Delius"  rel="stylesheet" type="text/css">
 			<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-            <link href="{% static "festival/css/Bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
+            <link href="{% static "festival/css/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
             <link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
 		{% endblock css %}
         
@@ -28,22 +31,18 @@
 	<body>
 		<div id="main">
 			<div id="top">
-				<img src="{% static "festival/images/fanfare_banniere.jpg" %}"/>
+				<img src="{% static "festival/images/fanfare_banniere.jpg" %}" class="img-responsive"/>
 			</div>
-			<div id="menu">
 				{% include "festival/_top_menubar.html" %}
-			</div>
-					<div id="div_contenu">
-					    <div id="contenu">
-							<div class="titre">
-							     <h1>{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
+					<div id="div_contenu" class="row container">
+							<div class="titre row">
+							     <h1 class="col-lg-offset-1">{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
 							</div>
 							{% block contenu %}{% endblock contenu %}
-						</div>
-				</div>
+					</div>
 			</div>
 			<div id="bottom">
-			     <img src="{% static "festival/images/footer_audessus_centrer.jpg" %}"/>
+			     <img src="{% static "festival/images/footer_audessus_centrer.jpg" %}" class="img-responsive"/>
 			</div>
 			<div id="footer_div">
 			     <div id="footer">

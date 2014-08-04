@@ -1,12 +1,34 @@
-<div id="boutons_menu" class="titre">
-    <ul><li>::</li>
-        <li><a href="{% url "festival.views.accueil" %}">Accueil</a></li><li>::</li>
-        <li><a href="{% url "festival.views.groupes" %}">Les groupes</a></li><li>::</li>
-        <li><a href="{% url "festival.views.programme" %}">Le Programme</a></li><li>::</li>
-        <li><a href="{% url "festival.views.medias" %}">Medias</a></li><li>::</li>
-        <!-- <li><a href="{% url "festival.views.historique" %}">Precedentes editions</a></li><li>::</li> -->
-        <li><a href="{% url "festival.views.infos" %}">Infos pratiques</a></li><li>::</li>
-        <li><a href="{% url "festival.views.liens" %}">Liens</a></li><li>::</li>
-        <li><a href="{% url "festival.views.sponsors" %}">Partenaires</a></li><li>::</li>
-    </ul>
-</div>  
+<nav id="menu" class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#boutons_menu">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="glyphicon glyphicon-music"></span>
+	        <!--span class="icon-bar"></span>
+	        <span class="icon-bar"></span-->
+	      </button>
+	      <a class="navbar-brand visible-xs" href="#">Fanfar Folizz</a >
+	    </div>												<!-- titre -->	
+		<div id="boutons_menu"  class="collapse navbar-collapse " role="navigation">
+		    <ul class= "nav navbar-nav">
+		    	<li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.accueil" %}">Accueil</a></li>
+		        <li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.groupes" %}">Les groupes</a></li>
+		        <li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.programme" %}">Le Programme</a></li>
+		        <li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.medias" %}">Medias</a></li>
+		        <li class="hidden-xs">::</li>
+		        <!-- <li><a href="{% url "festival.views.historique" %}">Precedentes editions</a></li><li>::</li> -->
+		        <li><a href="{% url "festival.views.infos" %}">Infos pratiques</a></li>
+		        <li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.liens" %}">Liens</a></li>
+		        <li class="hidden-xs">::</li>
+		        <li><a href="{% url "festival.views.sponsors" %}">Partenaires</a></li>
+		        <li class="hidden-xs">::</li>
+		        
+		    </ul>
+		</div> 
+	</div> 
+</nav>

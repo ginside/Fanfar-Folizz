@@ -5,14 +5,17 @@
     </div>
 </div>
 <div class="programme_evenement_detail">
-    <div class="nom_evenement">
-        <div class="nom">
-	       {{activite.quoi|upper}}
+    <a href="{% url "festival.views.activite_detail" activite_id=activite.id %}" >
+	    <div class="nom_evenement">
+	        <div class="nom">
+					    {{activite.quoi|upper}}
+		    </div>
+	        <div class="icone_activite">
+	        	&#9836;
+	        </div>
+		</div>
+	    <div class="image_groupe" style='background: #eee url("{{ MEDIA_URL }}{{activite.photo}}") no-repeat scroll center 35%;'>
 	    </div>
-        <div class="icone_activite">&#9836;</div>
-	</div>
-    <div class="image_groupe"
-         style='background: #eee url("{{ MEDIA_URL }}{{activite.photo}}") no-repeat scroll center 35%;'>
-    </div>
+	</a> 
 </div>
 <!-- {{activite.autres_informations}} -->

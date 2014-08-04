@@ -6,16 +6,15 @@
     </div>
 </div>
 <div class="programme_evenement_detail">
-    <div class="nom_evenement">
-        <div class="nom">
-			<a href="{% url "festival.views.groupe_detail" groupe_id=concert.groupe.id %}" >
-			    {{concert.groupe.nom|upper}}
-			</a> 
+	<a href="{% url "festival.views.groupe_detail" groupe_id=concert.groupe.id %}" >
+	    <div class="nom_evenement">
+	        <div class="nom">
+				    {{concert.groupe.nom|upper}}
+			</div>
+			<div class="icone_concert">{% random_music_sign %}</div>
 		</div>
-		<div class="icone_concert">{% random_music_sign %}</div>
-	</div>
-	<div class="image_groupe"
-         style='background: #eee url("{{ MEDIA_URL }}{{concert.groupe.photo}}") no-repeat scroll center 35%;'>
-	</div>
-	<!-- ({{concert.lieu}})-->
+		<div class="image_groupe"
+	         style='background: #eee url("{{ MEDIA_URL }}{{concert.groupe.photo}}") no-repeat scroll center 35%;'>
+		</div>
+	</a> 
 </div>

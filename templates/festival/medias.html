@@ -9,27 +9,26 @@
 {%block titre %}Medias{%endblock titre %}
 
 {%block contenu %}
-	<div id = "media">
-		<h2>Vidéos</h2>
-		<div id="videos_grid" class="row">
+	<div class="container row">
+		<div id="videos_grid" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			{% for media in medias %}
 				{% if media.type == "video" %}
-		            <div class= "span5 video">
+		            <div class= "col-lg-4 col-md-4 col-sm-12 col-xs-12 video">
 						{% autoescape off %}
 							{{media.code}}
 						{% endautoescape %}
-						<div class="video_nom">
+						<div class="video_nom col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	                       {{media.nom}}
 	                    </div>
 					</div>
 				{% endif %}
 			{% endfor %}
 		</div>
-		<h2>Images</h2>
-        <div id="images_grid" class="row">
+		<br>
+        <div id="images_grid" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			{% for media in medias %}
 				{% if media.type == "image" %}
-				    <div class="span2 image">
+				    <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 image">
 						<a href = "{{media.fichier.url }}" target= "_blank"><img src="{{ media.fichier|thumbnail }}"/></a>
 					</div>
 				{% endif %}

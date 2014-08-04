@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from django.db import models
 
@@ -13,12 +12,12 @@ TYPE_MEDIA = (
     ('j', 'Journal'),
 )
 
-class News(models.model):
+class News(models.Model):
     titre = models.CharField(max_length = 50)
     texte = models.TextField()
     date = models.DateTimeField(auto_now_add = True, blank = True)
 
-class Membre(models.model):
+class Membre(models.Model):
     nom = models.CharField(max_length = 50)
     photo = models.ImageField(upload_to = "membres", blank = True)
     instrument = models.CharField(max_length = 50)
@@ -28,26 +27,18 @@ class Membre(models.model):
     def __str__(self):
         return str(self.nom + self.instrument)
         
-    def __unicode__(self):
-        return unicode(self.nom + self.instrument)
-        
 class Media(models.Model):
     nom = models.CharField(max_length = 50)
     adresse = models.URLField(blank = True)
     fichier = models.FileField(upload_to = "files/",blank = True)
     type = models.CharField(max_length = 1, choices = TYPE_MEDIA)
-    
-    def __unicode__(self):
-        return unicode(self.nom) + " - "+ unicode(self.type)
-    
+
     def __str__(self):
         return str(self.nom) + " - "+ str(self.type)
     
 class Lien(models.Model):
     adresse = models.URLField()
     description = models.CharField(max_length = 200,blank = "true")
-    
-    def __unicode__(self):
-        return self.adresse
+
     def __str__(self):
         return self.adresse
