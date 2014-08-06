@@ -1,0 +1,31 @@
+{% extends "festival/accueil.html" %}
+{% load staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static "festival/css/Groupe_detail.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+
+{%block titre %}{{activite.quoi}}{%endblock titre %}
+
+{%block contenu %}
+	<div id="groupe_detail">
+				<div id="infos_groupe">
+					<ul>
+						<li>{{activite.qui}}</li>
+						<li>{{activite.lieu}}</li>
+						<li>{{activite.date}}</li>
+					</ul>
+					<p>{{activite.description}}</p>
+					<p>{{activite.autres_informations}}</p>
+				</div>
+				<div id="illustration_groupe">
+					<img
+						{% if activite.photo.width > 350 %}
+							width = "350"
+						{% endif %}
+					src="{{ MEDIA_URL }}{{activite.photo}}"/>
+				</div>
+				
+	</div>
+{%endblock contenu %}

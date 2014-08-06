@@ -2,9 +2,6 @@
 	width: 100%;
 	margin: 15px 0px ;
 }
-#div_contenu .titre {
-	margin-left: 10px;	
-}
 .video_frame {
 	padding-left: 0px;
 	padding-right: 0px;
@@ -15,14 +12,21 @@
   background-color: #F7AA1E;
 }
 .video{
-  margin: 4px 4px 0px 0px;
+  margin: 4px 8.5px 0px 0px;
 }
 .image{
 	margin: 4px 4px 0px 0px;
   width:150px;
 }
-#images_grid {
+
+.modal-body img {
+	margin: auto;
 }
-#images_grid .img {
-/* 	max-height: 115px; */
+#imageModal .modal-footer{
+	text-align: center;
+	padding: 0px 0px 5px;
+	border-top: none;
+}
+#videos_grid, #images_grid, #docs_grid {
+	margin: auto;
 }

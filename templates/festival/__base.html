@@ -5,8 +5,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
 		<script src="{% static "festival/js/jquery-2.1.1.js" %}"></script>
-		
 		<script src="{% static "festival/js/bootstrap.js" %}"></script>
+		<script src="{% static "festival/js/global.js" %}"></script>
 		
 		{% block css %}
 	        <link href="http://fonts.googleapis.com/css?family=Delius"  rel="stylesheet" type="text/css">
@@ -39,10 +39,10 @@
 							     <h1 class="col-lg-offset-1">{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
 							</div>
 							{% block contenu %}{% endblock contenu %}
+					<div id="bottom">
+					     <img src="{% static "festival/images/footer_audessus_centrer.jpg" %}" class="img-responsive"/>
 					</div>
-			</div>
-			<div id="bottom">
-			     <img src="{% static "festival/images/footer_audessus_centrer.jpg" %}" class="img-responsive"/>
+					</div>
 			</div>
 			<div id="footer_div">
 			     <div id="footer">

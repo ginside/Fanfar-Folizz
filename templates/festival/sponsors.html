@@ -11,14 +11,14 @@
 {%block contenu %}
 	<div id="sponsors" class="row">
 		{% for sponsor in sponsors %}
-			<div class="sponsor_detail span4">
+			<div class="sponsor_detail col-lg-4 col-lg-offset-2">
 			     <h3>{{sponsor.nom}}</h3>
 			     {% if sponsor.description %}
 			         <p>{{sponsor.description}}</p>
 			     {% endif %} 
 			</div>
 			
-            <div id="sponsor{{sponsor.id}}" class="sponsor_image span4">
+            <div id="sponsor{{sponsor.id}}" class="sponsor_image col-lg-4">
                     <img width = "400" src="{{ MEDIA_URL }}{{sponsor.logo }}"/>
             </div>
 		{% empty %}
