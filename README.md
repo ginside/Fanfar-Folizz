@@ -12,4 +12,4 @@ Django based web site
 4.python manage.py syncdb
 5.find a way to set MEDIA_URL according to base url of site
 6.python manage.py collectstatic
-##declare FANFAR_BASE_URL EnvVar?
+declare FANFAR_BASE_URL EnvVar?
