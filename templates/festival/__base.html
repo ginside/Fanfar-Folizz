@@ -24,6 +24,10 @@
 			{
 			    list-style-image: 			url("{% static "festival/images/puce_style.jpg" %}");
 			}
+			#main
+			{
+				background: 				url("{% static "festival/images/logo/logoFestivalDiagonaleSmall.svg" %}");
+			}
 		</style>
 		
 		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock titre %}</title>
@@ -31,11 +35,12 @@
 	<body>
 		<div id="main">
 			<div id="top">
-				<img src="{% static "festival/images/fanfare_banniere.jpg" %}" class="img-responsive"/>
-			</div>
+				<img src="{% static "festival/images/fanfare_banniere.png" %}" class="img-responsive"/>
+				<img src="{% static "festival/images/logo/logoFestival.svg" %}" class="img-responsive" id="logoFestivalImg"/>
+			</div>										  
 				{% include "festival/_top_menubar.html" %}
-					<div id="div_contenu" class="row container">
-							<div class="titre row">
+					<div id="contenu" class="row container">
+							<div class="titre_page row">
 							     <h1 class="col-lg-offset-1">{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
 							</div>
 							{% block contenu %}{% endblock contenu %}

@@ -52,7 +52,7 @@
 				<h2>Autres documents</h2>
 					{% for media in medias %}
 						{% if media.type == "pdf" %}
-			                <a href="{{ media.fichier.url }}" target = "_blank"> <img src="{% static "festival/images/pdf_icon_16x16.gif" %}" />{{ media.nom|capfirst }}</a>
+			                <a href="{{ media.fichier.url }}" target = "_blank"> <span class="glyphicon glyphicon-file"></span>{{ media.nom|capfirst }}</a>
 						{% endif %}
 					{% endfor %}
 			</div>
