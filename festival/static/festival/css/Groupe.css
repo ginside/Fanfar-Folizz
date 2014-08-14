@@ -15,7 +15,7 @@ margin-bottom: 10px;
 	background-color: #F7AA1E;
 	color: white;
 	max-width: 300px;
-	height: 30px;
+	min-height: 30px;
 	line-height:30px;
 }
 .div_nom_groupe a:hover {

@@ -30,7 +30,7 @@ font-family: 'Delius', cursive;
 #logoFestivalImg {
 	bottom: -22px;
 	position: absolute;
-	right: 105px;
+	right: 119px;
 }
 p {
 	
@@ -43,19 +43,23 @@ p {
 #menu .container-fluid {
 	padding: 0px 6px;
 }
+#menu_div {
+	text-align: center;
+}
 #menu {
+	display: inline-block;
 	font-size: 15px;
 	font-weight: bold;
 	color: #666666;
 	border: 1px black solid;
 	min-height: 34px;
 	
-	max-width: 894px;
+	max-width: 964px;
 	margin: auto; 
 	padding-top: 5px;
 	-webkit-box-shadow : 0px 4px 4px #DDD;
 	-moz-box-shadow: 0px 4px 4px #DDD;
-	-webkit-box-shadow: 0px 4px 4px #DDD;
+	box-shadow: 0px 4px 4px #DDD;
 	background-color: white;
 	border-radius: 0px;
 	z-index: 2;
@@ -72,6 +76,7 @@ p {
 #boutons_menu {
 	padding: inherit 0px;
 	margin: 0px;
+	text-align: center;
 }
 #boutons_menu li > a{
 	padding	: 0px 2px;
@@ -88,7 +93,16 @@ p {
 	color: black;
 	text-decoration: none;
 }
+.centered-navbar .nav,
+.centered-navbar .nav > li {
+  float:none;
+  display:inline-block;
+  vertical-align: top;
+}
 
+.centered-navbar .navbar-inner {
+  text-align:center;
+}
 a {
 	color: #1E8073;
 }
