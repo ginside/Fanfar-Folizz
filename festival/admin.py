@@ -50,7 +50,12 @@ class ArticleAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
-    
+
+
+class ContactAdmin(admin.ModelAdmin):
+    fields = fields = ['nom', 'prenom', 'mail', 'prestation', 'horaires', 'detail']
+
+
 admin.site.register(Groupe, GroupeAdmin)
 admin.site.register(Evenement, EvenementAdmin)
 admin.site.register(InformationsPratique, InformationsPratiqueAdmin)
@@ -61,3 +66,4 @@ admin.site.register(Festival, FestivalAdmin)
 admin.site.register(Activite, ActiviteAdmin)
 admin.site.register(Media, MediaAdmin)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Contact, ContactAdmin)

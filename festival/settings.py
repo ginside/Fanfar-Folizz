@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     'festival',
     # google maps widget 
     'easy_maps',
+    'captcha'
 )
 
 

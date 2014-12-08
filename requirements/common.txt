@@ -4,3 +4,4 @@ PyYAML==3.11
 django-easy-maps==0.9
 django-leaflet==0.13.2
 geopy==0.99
+django-simple-captcha==0.4.2

@@ -122,3 +122,15 @@ class Article(models.Model):
     
     def __str__(self):
         return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre
+
+
+class Contact(models.Model):
+    nom = models.CharField(max_length=50)
+    prenom = models.CharField(max_length=50)
+    mail = models.EmailField()
+    prestation = models.CharField(max_length=100)
+    horaires = models.CharField(max_length=50)
+    detail = models.TextField()
+
+    def __str__(self):
+        return self.nom+' '+ self.prenom+' '+self.mail

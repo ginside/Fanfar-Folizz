@@ -1,350 +1,515 @@
-#GROUPE
-
-- model: festival.groupe
-  pk: 1
-  fields:
-    nom: La banda tchitchaaa
-    style: Fanfare
-    photo: images/logo_banda_tchitchaaa.jpg
-    description: tralala
-    origine: France
-- model: festival.groupe
-  pk: 2
-  fields:
-    nom: ChaChaCha Nation
-    style: Salsa
-    photo: images/do-the-cha-cha-cha-rosencruz-sumera.jpg
-    description: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    origine: La Havane
-- model: festival.groupe
-  pk: 3
-  fields:
-    nom: Thierry Poncelet
-    style: Troubadour
-    photo: images/Thierry-Poncelet-The-Troubadour-97205.jpg
-    description: Un ménéstrel
-    origine: Bourgogne
-- model: festival.groupe
-  pk: 4
-  fields:
-    nom: Les tracto-pelles
-    style: Punk
-    photo: images/2be3_4.jpg
-    description: des oufs malades
-    origine: Écosse
-- model: festival.groupe
-  pk: 5
-  fields:
-    nom: Les étouffe Chrétien
-    style: Heavy Punk
-    photo: images/146813.jpg
-    description: des oufs malades
-    origine: France
-
-#EVENEMENT
-- model: festival.evenement
-  pk: 1
-  fields:
-    groupe: 1
-    lieu: "Grande place"
-    heure_passage: "2013-01-01T18:30:00+02:00"
-
-- model: festival.evenement
-  pk: 2
-  fields:
-    groupe: 1
-    lieu: "Près de l'église"
-    heure_passage: "2013-01-01T20:30:00+02:00"
-
-- model: festival.evenement
-  pk: 3
-  fields:
-    groupe: 2
-    lieu: "Chez Gégé"
-    heure_passage: "2013-01-02T00:30:00+02:00"
-    
-#- model: festival.evenement
-#  pk: 3
-#  fields:
-#    groupe: 5
-#    lieu: "Place du marché"
-#    heure_passage: "2013-01-03T00:30:00+02:00"
-
-#ACTIVITE
-
-- model: festival.activite
-  pk: 1
-  fields:
-    qui: Bozo le clown
-    quoi: cours de maquillage
-    lieu: place du village
-    photo: images/atelier-maquillage.png
-    date: "2013-01-01T17:00:00+02:00"
-    autres_informations: rien
-
-- model: festival.activite
-  pk: 2
-  fields:
-    qui: Dorothée
-    quoi: chanson
-    lieu: eglise
-    photo: images/33482727_1.jpg
-    date: "2013-01-02T06:00:00+02:00"
-    autres_informations: rien
-
-#MEDIA
-- model: festival.media
-  pk: 1
-  fields:
-    nom: Tuto serviettage
-    adresse: "http://www.youtube.com/watch?v=15GHT00sstk"
-    festival: 2
-    
-- model: festival.media
-  pk: 19
-  fields:
-    adresse: "http://www.dailymotion.com/video/x1685sz_une-fanfare-rend-hommage-a-michael-jackson-lors-d-un-match_music"
-    festival: 2
-    
-- model: festival.media
-  pk: 20
-  fields:
-    nom: La Bandas Velay
-    adresse: "http://www.dailymotion.com/video/x151jf2_la-bandas-velay-synergie-pour-l-envol-des-anges-2013_music"
-    festival: 2  
-  
-#MEDIA IMAGES 
-- model: festival.media
-  pk: 1
-  fields:
-    nom: Image
-    fichier: "images/100_0861.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 2
-  fields:
-    nom: Image
-    fichier: "images/0908Nogent0543.JPG"
-    festival: 2
-
-- model: festival.media
-  pk: 3
-  fields:
-    nom: Image
-    fichier: "images/100_0862.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 4
-  fields:
-    nom: Image
-    fichier: "images/100_0854.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 5
-  fields:
-    nom: Image
-    fichier: "images/29 08 09  1.bmp"
-    festival: 2
-
-- model: festival.media
-  pk: 6
-  fields:
-    nom: Image
-    fichier: "images/29 08 09 2.bmp"
-    festival: 2
-
-- model: festival.media
-  pk: 7
-  fields:
-    nom: Image
-    fichier: "images/0908Nogent0425.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 8
-  fields:
-    nom: Image
-    fichier: "images/0908Nogent0435.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 9
-  fields:
-    nom: Image
-    fichier: "images/100_0847.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 10
-  fields:
-    nom: Image
-    fichier: "images/0908Nogent0751.JPG"
-    festival: 2
-
-- model: festival.media
-  pk: 11
-  fields:
-    nom: Image
-    fichier: "images/n584995633_4125460_6120.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 12
-  fields:
-    nom: Image
-    fichier: "images/n584995633_4286140_3329.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 13
-  fields:
-    nom: Image
-    fichier: "images/n584995633_4286112_462.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 14
-  fields:
-    nom: Image
-    fichier: "images/n584995633_4286114_1002.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 15
-  fields:
-    nom: Image
-    fichier: "images/n584995633_4286113_818.jpg"
-    festival: 2
-
-- model: festival.media
-  pk: 16
-  fields:
-    nom: Image
-    fichier: "images/Affiche festival.TIF"
-    festival: 2
-
-#MEDIA FICHIERS
-- model: festival.media
-  pk: 200
-  fields:
-    nom: Test de fichier PDF
-    fichier: files/pdf-test.pdf
-    festival: 2
-
-#FESTIVAL
-
-- model: festival.festival
-  pk: 1
-  fields:
-    nom: Fanfar Folizz 2011
-    date_creation: "2011-01-02T06:00:00+02:00"
-    historise: 1
-
-
-- model: festival.festival
-  pk: 2
-  fields:
-    nom: Fanfar Folizz 2013
-    evenements: [1 , 2 , 3]
-    activites: [1 , 2]
-    date_creation: "2013-01-02T06:00:00+02:00"
-    historise: 0
-
-#INFORMATION PRATIQUE
-- model: festival.informationsPratique
-  pk: 1
-  fields:
-    carte: images/plan_gene.gif
-    explications: par ici puis par la puis encore par la puis encore par ci
-    autresInformations: blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
-    
-    
-#SPONSOR
-
-- model: festival.sponsor
-  pk: 1
-  fields:
-    nom: Poissonnerie Brochot
-    logo: images/6525546_5.jpg
-    description: Il est frais mon poisson!
-
-- model: festival.sponsor
-  pk: 2
-  fields:
-    nom: Boucherie Sanzot
-    logo: images/boucherie_carrere_didier_2.JPG
-    description: Il est bon mon bifteak!
-    
-#LIEN
-
-- model: festival.lien
-  pk: 1
-  fields:
-    adresse: http://www.google.com
-    description: google
-- model: festival.lien
-  pk: 2
-  fields:
-    adresse: http://www.facebook.com
-    description: fb
-- model: festival.lien
-  pk: 3
-  fields:
-    adresse: http://www.francedidgeridoo.com
-    description: France didge
-
-#AUTH
-- model: auth.user
-  pk: 2
-  fields:
-    username: dada
-    first_name: daniel
-    last_name: francois
-    is_active: true
-    is_superuser: true
-    is_staff: true
-    password: daniel
-    date_joined: "2010-06-01 12:00:00+02:00"
-
-
-- model: auth.user
-  pk: 3
-  fields:
-    username: eric
-    first_name: eric
-    last_name: bottier
-    is_active: true
-    is_superuser: true
-    is_staff: true
-    password: bottier
-    date_joined: "2010-06-01 12:00:00+02:00"
-    
-#NEWS
-- model: festival.article
-  pk: 1
-  fields:
-    titre: "Un exemple d'article"
-    contenu: "Le texte d'exemple pour mon exemple d'article"
-    date: "2012-12-28T06:00:00+02:00"
-    auteur: 2
-
-- model: festival.article
-  pk: 2
-  fields:
-    titre: "C'est Noël!"
-    contenu: "Alors joyeux Noël !!!"
-    date: "2013-12-25T08:00:00+02:00"
-    auteur: 2
-
-- model: festival.article
-  pk: 3
-  fields:
-    titre: "L'édition 2014 est annoncée !"
-    contenu: "Les Fanfar FolizZz 2014 sont annoncées pour aout à Nogent-Le-Rotrou! Ca va être l'éclate totale wahooo !!"
-    date: "2014-05-17T10:00:00+02:00"
-    auteur: 3
-
-    
+[
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "fanfar", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-08-27T12:46:20Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$aDDbXnEIr8He$GCRHBjLgZuGLSW7XYkjU3dqUo5Aq+7Ch93IK+z3t6B0=", 
+        "email": "d@d.net", 
+        "date_joined": "2012-08-15T22:44:49Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "dada", 
+        "first_name": "daniel", 
+        "last_name": "francois", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-06-02T15:43:38Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "daniel", 
+        "email": "", 
+        "date_joined": "2010-06-01T10:00:00Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "eric", 
+        "first_name": "eric", 
+        "last_name": "bottier", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-06-02T15:43:38Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "bottier", 
+        "email": "", 
+        "date_joined": "2010-06-01T10:00:00Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "easy_maps.address", 
+    "fields": {
+        "computed_address": "Nogent-le-Rotrou, France", 
+        "latitude": 48.321762, 
+        "geocode_error": false, 
+        "longitude": 0.8217759, 
+        "address": "France, Nogent le Rotrou"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.groupe", 
+    "fields": {
+        "origine": "Margon - 28", 
+        "nom": "La Banda TCHITCHAAA", 
+        "style": "Banda ", 
+        "description": "Nous sommes les organisateurs de ce festival \u00e9clectique qui m\u00e9lange les styles et genres musicaux \u00e0 partir du moment o\u00f9 il y a des cuivres (trompette, trombone, tuba, euphonium, soubassophone, cor, bugle, fliscorno, baryton, basse...). \r\nNous sommes une banda mais dont le r\u00e9pertoire ne se limite pas aux airs si porteurs du sud ouest. \r\nNous interviendrons le vendredi pour le compte de la Mairie de Nogent le Rotrou place St Pol, rue st hilaire pour l'ouverture de la braderie des commer\u00e7ants de l'UCIAL. Le samedi matin, de 10h30 \u00e0 11h45 sur le march\u00e9 de Nogent (idem vendredi soir, plus rue de la herse, rue villette G\u00e2t\u00e9...). \r\net en soir\u00e9e, organisation, pr\u00e9sentation, intervention... on sera sur tous les champs. \r\nVous esp\u00e9rant une bonne soir\u00e9e avec de la musique plein les oreilles... \u00e0 se voir les 29 ou 30 ao\u00fbt prochain.", 
+        "photo": "images/378700_4634376864375_1488423193_n.jpg"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.groupe", 
+    "fields": {
+        "origine": "Landelles - 28", 
+        "nom": "Black & White Brass Band", 
+        "style": "Brass Band", 
+        "description": "Ce sera le groupe local. Le Black and White Brass Band est un ensemble dynamique de musiciens de tous \u00e2ges. Fond\u00e9 en 2013, le groupe a de belles ann\u00e9es devant lui. Entre percussions, saxophones, trompettes, trombones et basses, c'est l'accord parfait pour accompagner en musique tous types de festivit\u00e9s! F\u00eates communales, c\u00e9r\u00e9monies comm\u00e9moratives, messes... Dans un cadre professionnel, cette dizaine de musiciens transmet joie et bonne humeur, et donne envie de les suivre dans ses d\u00e9fil\u00e9s et autres cavalcades!\r\nPr\u00e9sents uniquement l'apr\u00e8s midi en d\u00e9ambulation dans Nogent le Rotrou. ", 
+        "photo": "images/BWBB_1.jpg"
+    }
+},
+{
+    "pk": 3, 
+    "model": "festival.groupe", 
+    "fields": {
+        "origine": "Autainville - 41", 
+        "nom": "Les Zik'Autain", 
+        "style": "Banda Harmonie", 
+        "description": "Banda Harmonie, \u00e0 choisir, de tout de fa\u00e7on, ils ont toujours un r\u00e9pertoire tr\u00e8s enjou\u00e9 et qui enchante le public. Ils n'en seront qu'\u00e0 leur ...4\u00e8me participation en 7 festival ! vous les aimez, on les aime, ils n'\u00e9taient pas pr\u00e9sents l'an pass\u00e9, ils voulaient revenir, on les voulait aussi, les revoil\u00e0!!\r\nattention ambiance assur\u00e9e aussi, pr\u00e9parez vous \u00e0 chanter, danser... ils savent y faire.\r\nils ne seront l\u00e0 qu'en soir\u00e9e, mais vont se donner comme \u00e0 leur habitude.\r\n", 
+        "photo": "images/100_0381_1.bmp"
+    }
+},
+{
+    "pk": 4, 
+    "model": "festival.groupe", 
+    "fields": {
+        "origine": "Mantes la Jolie - 78", 
+        "nom": "Le Boa Brass Band", 
+        "style": "funk groove classique festive tr\u00e8s vari\u00e9", 
+        "description": "Pour la premi\u00e8re fois au Fanfar'Folizzz. Ce groupe qui pour une fois au festival aura plus de saxophone (famille des bois) que de cuivres (uniquement un soubassophone), va vous surprendre \u00e9galement \u00e0 plus d'un titre. Groupe professionnel de la r\u00e9gion de Mantes la Jolie, leur r\u00e9pertoire vari\u00e9 pouvant aller de la musique ambiance, festive au balkanique en passant par des rocks endiabl\u00e9s... Passer d'un swing \u00e0 la 25\u00e8me symphonie de Mozart, c'est quand m\u00eame pas commun!!!  bonne soir\u00e9e en pr\u00e9vision\r\nils seront l\u00e0 l'apr\u00e8s midi en d\u00e9ambulation dans Nogent le Rotrou et le soir \u00e0 la base de loisirs de la borde o\u00f9 ils feront deux passages sc\u00e9niques de 40 minutes. Ils participeront \u00e0 l'ap\u00e9ritif avec un ou deux morceaux auparavant, ainsi qu'au boeuf final. ", 
+        "photo": "images/BBB.jpg"
+    }
+},
+{
+    "pk": 5, 
+    "model": "festival.groupe", 
+    "fields": {
+        "origine": "Le Mans - 72", 
+        "nom": "L'A.O.C. (L'Aile ou la Cuisse Fanfare)", 
+        "style": "Fanfare Groove, funk", 
+        "description": "D\u00e9j\u00e0 pr\u00e9sents lors du tout premier festival en Ao\u00fbt 2008, ils nous avaient \u00e9pat\u00e9s tant par leur musique, leur \u00e9nergie que leur tenue et leur gentillesse. Groupe professionnel du Mans. Vous serez surpris au d\u00e9part par leur musique et en redemanderez rapidement. Un l\u00e9ger d\u00e9jant\u00e9s sur les bords mais si sympathiques. Nouvelle tenue, nouveaux musiciens, nouveau r\u00e9pertoire depuis le 30 ao\u00fbt 2008. Ils seront 10 pour vous faire vibrer. \r\nIls seront l\u00e0 l'apr\u00e8s midi en d\u00e9ambulation dans Nogent le Rotrou et en soir\u00e9e \u00e0 la base de loisirs de La Borde \u00e0 Margon o\u00f9 ils r\u00e9aliseront deux passages sc\u00e9niques en plus d'un ou deux morceaux durant l'ap\u00e9ritif des partenaires, b\u00e9n\u00e9voles et musiciens \u00e018h30 / 45 et au boeuf final. ", 
+        "photo": "images/AOC1.jpg"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 5, 
+        "heure_passage": "2014-08-30T12:30:00Z", 
+        "lieu": "Centre ville de Nogent le Rotrou"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 4, 
+        "heure_passage": "2014-08-30T12:30:00Z", 
+        "lieu": "Centre ville de Nogent le Rotrou"
+    }
+},
+{
+    "pk": 3, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 2, 
+        "heure_passage": "2014-08-30T12:30:00Z", 
+        "lieu": "Centre Nogent"
+    }
+},
+{
+    "pk": 4, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 1, 
+        "heure_passage": "2014-08-30T08:30:00Z", 
+        "lieu": "Nogent le Rotrou"
+    }
+},
+{
+    "pk": 5, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 3, 
+        "heure_passage": "2014-08-30T17:00:00Z", 
+        "lieu": "Margon, Base de loisirs"
+    }
+},
+{
+    "pk": 6, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 4, 
+        "heure_passage": "2014-08-30T17:00:00Z", 
+        "lieu": "Margon, Base de loisirs"
+    }
+},
+{
+    "pk": 7, 
+    "model": "festival.evenement", 
+    "fields": {
+        "groupe": 5, 
+        "heure_passage": "2014-08-30T17:00:00Z", 
+        "lieu": "Margon, Base de loisirs"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.activite", 
+    "fields": {
+        "autres_informations": "rien", 
+        "photo": "images/atelier-maquillage.png", 
+        "date": "2013-01-01T15:00:00Z", 
+        "lieu": "place du village", 
+        "qui": "Bozo le clown", 
+        "quoi": "cours de maquillage"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.activite", 
+    "fields": {
+        "autres_informations": "rien", 
+        "photo": "images/33482727_1.jpg", 
+        "date": "2013-01-02T04:00:00Z", 
+        "lieu": "eglise", 
+        "qui": "Doroth\u00e9e", 
+        "quoi": "chanson"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.festival", 
+    "fields": {
+        "nom": "Fanfar Folizz 2011", 
+        "activites": [], 
+        "date_creation": "2011-01-02T04:00:00Z", 
+        "evenements": [], 
+        "historise": true
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.festival", 
+    "fields": {
+        "nom": "Fanfar Folizz 2013", 
+        "activites": [
+            1, 
+            2
+        ], 
+        "date_creation": "2013-01-02T04:00:00Z", 
+        "evenements": [
+            1, 
+            2, 
+            3
+        ], 
+        "historise": false
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/100_0861.jpg"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/0908Nogent0543.JPG"
+    }
+},
+{
+    "pk": 3, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/100_0862.jpg"
+    }
+},
+{
+    "pk": 4, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/100_0854.jpg"
+    }
+},
+{
+    "pk": 5, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/29 08 09  1.bmp"
+    }
+},
+{
+    "pk": 6, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/29 08 09 2.bmp"
+    }
+},
+{
+    "pk": 7, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/0908Nogent0425.jpg"
+    }
+},
+{
+    "pk": 8, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/0908Nogent0435.jpg"
+    }
+},
+{
+    "pk": 9, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/100_0847.jpg"
+    }
+},
+{
+    "pk": 10, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/0908Nogent0751.JPG"
+    }
+},
+{
+    "pk": 11, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/n584995633_4125460_6120.jpg"
+    }
+},
+{
+    "pk": 12, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/n584995633_4286140_3329.jpg"
+    }
+},
+{
+    "pk": 13, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/n584995633_4286112_462.jpg"
+    }
+},
+{
+    "pk": 14, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/n584995633_4286114_1002.jpg"
+    }
+},
+{
+    "pk": 15, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/n584995633_4286113_818.jpg"
+    }
+},
+{
+    "pk": 16, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Image", 
+        "adresse": "", 
+        "fichier": "images/Affiche festival.TIF"
+    }
+},
+{
+    "pk": 19, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "", 
+        "adresse": "http://www.dailymotion.com/video/x1685sz_une-fanfare-rend-hommage-a-michael-jackson-lors-d-un-match_music", 
+        "fichier": ""
+    }
+},
+{
+    "pk": 20, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "La Bandas d'Autainville", 
+        "adresse": "http://www.dailymotion.com/video/x151jf2_la-bandas-velay-synergie-pour-l-envol-des-anges-2013_music", 
+        "fichier": "files/Fanfar_Folies_du_30_aout_032_3.mpg"
+    }
+},
+{
+    "pk": 200, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "Test de fichier PDF", 
+        "adresse": "", 
+        "fichier": "files/pdf-test.pdf"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.sponsor", 
+    "fields": {
+        "nom": "Poissonnerie Brochot", 
+        "description": "Il est frais mon poisson!", 
+        "logo": "images/6525546_5.jpg"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.sponsor", 
+    "fields": {
+        "nom": "Boucherie Sanzot", 
+        "description": "Il est bon mon bifteak!", 
+        "logo": "images/boucherie_carrere_didier_2.JPG"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.informationspratique", 
+    "fields": {
+        "autresInformations": "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla", 
+        "explications": "par ici puis par la puis encore par la puis encore par ci", 
+        "carte": "images/plan_gene.gif"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.lien", 
+    "fields": {
+        "adresse": "http://www.google.com", 
+        "description": "google"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.lien", 
+    "fields": {
+        "adresse": "http://www.facebook.com", 
+        "description": "fb"
+    }
+},
+{
+    "pk": 3, 
+    "model": "festival.lien", 
+    "fields": {
+        "adresse": "http://www.francedidgeridoo.com", 
+        "description": "France didge"
+    }
+},
+{
+    "pk": 1, 
+    "model": "festival.article", 
+    "fields": {
+        "date": "2012-12-28T04:00:00Z", 
+        "titre": "Un exemple d'article", 
+        "auteur": [
+            "dada"
+        ], 
+        "contenu": "Le texte d'exemple pour mon exemple d'article"
+    }
+},
+{
+    "pk": 2, 
+    "model": "festival.article", 
+    "fields": {
+        "date": "2013-12-25T06:00:00Z", 
+        "titre": "C'est No\u00ebl!", 
+        "auteur": [
+            "dada"
+        ], 
+        "contenu": "Alors joyeux No\u00ebl !!!"
+    }
+},
+{
+    "pk": 3, 
+    "model": "festival.article", 
+    "fields": {
+        "date": "2014-05-17T08:00:00Z", 
+        "titre": "L'\u00e9dition 2014 est annonc\u00e9e !", 
+        "auteur": [
+            "eric"
+        ], 
+        "contenu": "Les Fanfar FolizZz 2014 sont annonc\u00e9es pour aout \u00e0 Nogent-Le-Rotrou! Ca va \u00eatre l'\u00e9clate totale wahooo !!"
+    }
+}
+]

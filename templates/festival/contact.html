@@ -1,0 +1,33 @@
+{% extends "festival/accueil.html" %}
+{% load staticfiles festival_extras %}
+
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static "festival/css/Contact.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+
+{% block titre %}Contact{% endblock titre %}
+{% block contenu %}
+    {% if contact_form.is_valid %}
+        <div class="thanks">Merci pour votre demande, on vous répondra vite!</div>
+    {% else %}
+        <form action="{% url 'festival.views.contact' %}" method="post" role="form" class="form-horizontal" id="contact-form">
+                {% csrf_token %}
+                {% for field in contact_form %}
+                    <div class="form-group" >
+                        {{ field.errors }}
+                        <div class="col-lg-2 control-label">
+                            {{ field.label_tag }}
+                        </div>
+                        <div class="col-lg-10">
+                            {{ field|add_attributes:"form-control" }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="form-group col-lg-offset-5 col-lg-2" >
+                    <input type="submit" value="Envoyer" class=" form-control btn btn-default" />
+                </div>
+        </form>
+    {% endif %}
+{% endblock contenu %}
