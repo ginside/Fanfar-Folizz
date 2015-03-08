@@ -3,7 +3,11 @@
 
 {% block css %}
     {{ block.super }}
-    <link href="{% static "festival/css/Media.css" %}" rel="stylesheet" type="text/css"/>
+    {% if current_module == "festival" %}
+    	<link href="{% static "festival/css/Media.css" %}" rel="stylesheet" type="text/css"/>
+    {% elif current_module == "banda" %}
+    	<!-- TODO -->
+    {% endif %}
 {% endblock css %}
 
 {%block titre %}Medias{%endblock titre %}
@@ -42,7 +46,9 @@
 			{% for media in medias %}
 				{% if media.type == "image" %}
 				    <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 image">
-						<a href = "#imageModal" data-img-url="{{media.fichier.url }}" data-img-title="{{media.nom}}" data-toggle="modal"><img src="{{ media.fichier|thumbnail }}" /></a>
+						<a href = "#imageModal" data-img-url="{{media.fichier.url }}" data-img-title="{{media.nom}}" data-toggle="modal">
+							<img src="{{ media.fichier|thumbnail }}" />
+						</a>
 					</div>
 				{% endif %}
 			{% endfor %}

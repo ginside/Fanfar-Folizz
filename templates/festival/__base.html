@@ -12,9 +12,13 @@
 	        <link href="http://fonts.googleapis.com/css?family=Delius"  rel="stylesheet" type="text/css">
 			<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
             <link href="{% static "festival/css/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
-            <link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
+            {% if current_module == "festival" %}
+            	<link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
+            {% elif current_module == "banda" %}
+				<!-- TODO -->
+            {% endif %}
 		{% endblock css %}
-        
+        {% if current_module == "festival" %}
 		<style type="text/css">
 			#footer_div
 			{
@@ -29,7 +33,7 @@
 				background: 				url("{% static "festival/images/logo/logoFestivalDiagonaleSmall.svg" %}");
 			}
 		</style>
-		
+		{% endif %}
 		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock titre %}</title>
 	</head>
 	<body>
@@ -37,11 +41,16 @@
 			<div id="top">
 				<img src="{% static "festival/images/fanfare_banniere.png" %}" class="img-responsive"/>
 				<img src="{% static "festival/images/logo/logoFestival.svg" %}" class="img-responsive" id="logoFestivalImg"/>
-			</div>										  
-				{% include "festival/_top_menubar.html" %}
+			</div>			
+				
+        		{% if current_module == "festival" %}							  
+					{% include "festival/_top_menubar.html" %}
+				{% elif current_module == "banda" %}
+					{% include "banda/_top_menubar.html" %}
+				{% endif %}
 					<div id="contenu" class="row container">
 							<div class="titre_page row">
-							     <h1 class="col-lg-offset-1">{% block soustitre %}Fanfar FolizZz{% endblock soustitre %}</h1>
+							     <h1 class="col-lg-offset-1">{% block soustitre %}{% endblock soustitre %}</h1>
 							</div>
 							{% block contenu %}{% endblock contenu %}
 					<div id="bottom">
@@ -51,9 +60,13 @@
 			</div>
 			<div id="footer_div">
 			     <div id="footer">
-                    <span class="footer_text">Copyright Fanfar-folizzz 2011! Tous droits reserves! Etc etc!</span>
+                    <span class="footer_text">Copyright Tchitcha tous droits reserves! Etc etc!</span>
                      <br>
+        		{% if current_module == "festival" %}	
                     <span class="footer_text"> <a href="{% url 'festival.views.contact' %}">Contactez-nous!</a></span>
+				{% elif current_module == "banda" %}
+					<span class="footer_text"> <a href="{% url 'banda.views.contact' %}">Contactez-nous!</a></span>
+				{% endif %}
                 </div>
 			</div>
 		</div>

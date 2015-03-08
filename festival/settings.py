@@ -1,6 +1,7 @@
 # Django settings for fanfar-folizz project.
 import os
 import sys
+from django.conf import settings
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -103,6 +104,11 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
+TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'festival.context_processors.get_module_name'
+)
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -138,13 +144,21 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # fanfar-folizzz festival website
     'festival',
+    'banda',
     # google maps widget 
     'easy_maps',
-    'captcha'
+    'captcha',
 )
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_URL = BASE_URL + '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
+
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+   }
+}

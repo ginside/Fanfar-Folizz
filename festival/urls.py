@@ -3,7 +3,7 @@ from festival import settings
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from captcha import urls
-
+from banda import urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -29,6 +29,8 @@ urlpatterns = patterns('',
                        (r'^admin/', include(admin.site.urls)),
                        # Uncomment the admin/doc line below to enable admin documentation:
                        # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-                       (r'^captcha/', include('captcha.urls'))
+                       (r'^captcha/', include('captcha.urls')),
+                       
+                       (r'^banda-tchitchaa/', include('banda.urls'))
 )
 

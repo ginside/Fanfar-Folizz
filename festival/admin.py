@@ -24,7 +24,7 @@ class HistoriqueAdmin(admin.ModelAdmin):
     
 class LienAdmin(admin.ModelAdmin):
     fields = ['adresse','description']
-
+    
 class MediaAdmin(admin.ModelAdmin):
     fields = ['nom','adresse','fichier','festival']
     

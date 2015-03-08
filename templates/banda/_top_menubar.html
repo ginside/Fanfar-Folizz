@@ -1,0 +1,37 @@
+<div id="menu_div">
+	<nav id="menu" class="navbar centered-navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#boutons_menu">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="glyphicon glyphicon-music"></span>
+		        <!--span class="icon-bar"></span>
+		        <span class="icon-bar"></span-->
+		      </button>
+		      <a class="navbar-brand visible-xs" href="#">Fanfar Folizz</a >
+		    </div>												<!-- titre -->
+			<div id="boutons_menu"  class="collapse navbar-collapse " role="navigation">
+			    <ul class= "nav navbar-nav">
+			    	<li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.accueil" %}">Accueil</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.trombi" %}">Trombi</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.medias" %}">Medias</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.music" %}">La tchitcha Music</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.calendrier_sorties" %}">Prochaines sorties</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.contact" %}">Contact</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="{% url "banda.views.liens" %}">Liens</a></li>
+			        <li class="hidden-xs">::</li>
+			        <li><a href="http://tripledash.free.fr">Forum</a></li>
+			        <li class="hidden-xs">::</li>
+
+			    </ul>
+			</div>
+		</div>
+	</nav>
+</div>
