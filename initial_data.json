@@ -511,5 +511,60 @@
         ], 
         "contenu": "Les Fanfar FolizZz 2014 sont annonc\u00e9es pour aout \u00e0 Nogent-Le-Rotrou! Ca va \u00eatre l'\u00e9clate totale wahooo !!"
     }
+},
+{
+    "pk": 1,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Tchitcha",
+        "prenom" : "Eric",
+        "photo" : "images/membres/Eric.jpg",
+        "instrument" : "trombonne",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "f",
+        "afficher" : "True"
+   	}
+},
+{
+    "pk": 2,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Bret",
+        "prenom" : "Florian",
+        "photo" : "images/membres/Mr_peanut_butter.JPG",
+        "instrument" : "djembé",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
+    "pk": 3,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Francois",
+        "prenom" : "Daniel",
+        "photo" : "images/membres/didgeridoo.gif",
+        "instrument" : "didgeridoo",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
+    "pk": 1, 
+    "model": "banda.lien", 
+    "fields": {
+        "adresse": "http://www.google.nl", 
+        "description": "google NL"
+    }
+},
+{
+    "pk": 2, 
+    "model": "banda.lien", 
+    "fields": {
+        "adresse": "http://www.lyon.com", 
+        "description": "lyon"
+    }
 }
 ]

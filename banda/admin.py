@@ -8,5 +8,9 @@ class LienAdmin(admin.ModelAdmin):
 class MediaAdmin(admin.ModelAdmin):
     fields = ['nom','adresse','fichier']
 
+class MembreAdmin(admin.ModelAdmin):
+    fields = ['nom','prenom','photo','instrument','blabla','type','afficher']
+    
 admin.site.register(Lien, LienAdmin)
 admin.site.register(Media, MediaAdmin)
+admin.site.register(Membre, MembreAdmin)

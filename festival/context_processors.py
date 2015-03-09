@@ -6,7 +6,6 @@ def get_module_name(request):
     """
     context = {}
     name = getmodule(stack()[2][0]).__name__
-    print()
     context['current_view'] = "%s.%s" % (name, stack()[2][3])
     context['current_module'] = name.split('.')[0]
     return context

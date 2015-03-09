@@ -3,16 +3,6 @@ from django.db import models
 from festival.models import Contact
 from django.contrib.auth import get_user_model
 
-TYPE_MEMBRE = (
-    ('f', 'Fixe'),
-    ('p', 'Ponctuel'),
-    ('t', 'Temporaire'),
-)
-TYPE_MEDIA = (
-    ('p', 'Photo'),
-    ('v', 'Vidéo'),
-    ('j', 'Journal'),
-)
 
 class Article(models.Model):
     titre = models.CharField(max_length = 64)
@@ -23,6 +13,11 @@ class Article(models.Model):
     def __str__(self):
         return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre
 
+TYPE_MEDIA = (
+    ('p', 'Photo'),
+    ('v', 'Vidéo'),
+    ('j', 'Journal'),
+)
 class Media(models.Model):
     nom = models.CharField(max_length = 50)
     adresse = models.URLField(blank = True)
@@ -62,18 +57,22 @@ class Lien(models.Model):
     def __str__(self):
         return self.adresse
 
-        
+TYPE_MEMBRE = (
+    ('f', 'Fixe'),
+    ('p', 'Ponctuel'),
+    ('t', 'Temporaire'),
+)
 class Membre(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='membres', blank=True)
+    photo = models.ImageField(upload_to='images/membres', blank=True)
     instrument = models.CharField(max_length=50)
     blabla = models.TextField(blank=True)
     type = models.CharField(choices=TYPE_MEMBRE, max_length=1)
-    aficher = models.BooleanField()
+    afficher = models.BooleanField()
 
     def __str__(self):
-        return str(self.nom + self.instrument)
+        return str(self.type.upper() + ' - ' + self.prenom + ' ' + self.nom + '(' + self.instrument + ')')
 
 class DateEvenement(models.Model):
     nom = models.CharField(max_length=50)

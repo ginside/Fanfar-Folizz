@@ -1,2 +1,9 @@
 {% extends "festival/__l_simple.html" %}
 {% load festival_extras staticfiles %}
+
+{% block contenu %}
+	{% for membre in membres %}
+		<img src={{MEDIA_URL}}{{membre.photo}} {% if membre.photo.width > 150 %}style="width: 300px;"{% endif %}/>
+		<div>{{membre.nom}} {{membre.prenom}} {{membre.instrument}}</div>
+	{% endfor %}
+{% endblock %}
