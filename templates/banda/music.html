@@ -1,0 +1,11 @@
+{% extends "festival/__l_simple.html" %}
+{%block titre %}La TchiTcha Music{%endblock titre %}
+{% block contenu %}
+	{% for morceau in morceaux %}
+		<div>
+			{{morceau.titre}}
+			<br />
+			{{morceau.player|safe}}
+		</div>
+	{% endfor %}
+{% endblock %}

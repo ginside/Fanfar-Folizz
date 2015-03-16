@@ -1,0 +1,8 @@
+#top {
+	text-align: center;
+}
+#logoTchitchaImg {
+	bottom: -10px;
+	position: absolute;
+	z-index: 4;
+}
