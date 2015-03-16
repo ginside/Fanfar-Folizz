@@ -566,5 +566,21 @@
         "adresse": "http://www.lyon.com", 
         "description": "lyon"
     }
+},
+{
+    "pk": 1, 
+    "model": "banda.music", 
+    "fields": {
+        "titre": "techno", 
+        "lien": "https://soundcloud.com/daniel-francois/tech012015"
+    }
+},
+{
+    "pk": 2, 
+    "model": "banda.music", 
+    "fields": {
+        "titre": "mix", 
+        "lien": "https://soundcloud.com/daniel-francois/kaptains-weirdest-1"
+    }
 }
 ]

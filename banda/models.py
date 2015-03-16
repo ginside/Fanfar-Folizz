@@ -79,6 +79,11 @@ class DateEvenement(models.Model):
     description = models.CharField(max_length = 200,blank = True)
     date = models.DateTimeField()
 
+class Music(models.Model):
+    titre = models.CharField(max_length=50)
+    lien = models.URLField()
+    partoche = models.FileField(upload_to = "files/partoches",blank = True)
+
 class BandaContact(Contact):
     class Meta:
         proxy = True

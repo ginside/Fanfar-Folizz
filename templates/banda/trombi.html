@@ -1,9 +1,17 @@
 {% extends "festival/__l_simple.html" %}
 {% load festival_extras staticfiles %}
-
 {% block contenu %}
 	{% for membre in membres %}
-		<img src={{MEDIA_URL}}{{membre.photo}} {% if membre.photo.width > 150 %}style="width: 300px;"{% endif %}/>
-		<div>{{membre.nom}} {{membre.prenom}} {{membre.instrument}}</div>
+		<div class="groupes_col col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<div class = "groupe">
+				<div class ="div_nom_groupe">
+				    <span class="nom_groupe">
+						{{membre.prenom}} {{membre.instrument}}
+			        </span>
+			        <br>
+			    </div>
+				<img src="{{ MEDIA_URL }}{{membre.photo}}" style="max-width: 100%;"/>
+			</div>
+		</div>
 	{% endfor %}
 {% endblock %}

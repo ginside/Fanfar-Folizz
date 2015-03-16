@@ -12,10 +12,9 @@
 	        <link href="http://fonts.googleapis.com/css?family=Delius"  rel="stylesheet" type="text/css">
 			<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
             <link href="{% static "festival/css/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
-            {% if current_module == "festival" %}
-            	<link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
-            {% elif current_module == "banda" %}
-				<!-- TODO -->
+           	<link href="{% static "festival/css/Global.css" %}" rel="stylesheet" type="text/css"/>
+            {% if current_module == "banda" %}
+            	<link href="{% static "banda/css/Global.css" %}" rel="stylesheet" type="text/css"/>
             {% endif %}
 		{% endblock css %}
         {% if current_module == "festival" %}
@@ -33,14 +32,35 @@
 				background: 				url("{% static "festival/images/logo/logoFestivalDiagonaleSmall.svg" %}");
 			}
 		</style>
+		{% elif current_module == "banda" %}
+		
+		<style type="text/css">
+			#footer_div
+			{
+ 				background-image: 			url("{% static "festival/images/footer_x_repeat.jpg" %}"); 
+			}
+			#contenu
+			{
+			    list-style-image: 			url("{% static "festival/images/puce_style.jpg" %}");
+			}
+			#main
+			{
+/* 				background: 				url("{% static "festival/images/logo/logoFestivalDiagonaleSmall.svg" %}"); */
+			}
+		</style>
 		{% endif %}
 		<title>Les fanfar' folizzz - {% block titre %}Fanfar FolizZz{% endblock titre %}</title>
 	</head>
 	<body>
 		<div id="main">
 			<div id="top">
-				<img src="{% static "festival/images/fanfare_banniere.png" %}" class="img-responsive"/>
-				<img src="{% static "festival/images/logo/logoFestival.svg" %}" class="img-responsive" id="logoFestivalImg"/>
+				{% if current_module == "festival" %}
+					<img src="{% static "festival/images/fanfare_banniere.png" %}" class="img-responsive"/>
+					<img src="{% static "festival/images/logo/logoFestival.svg" %}" class="img-responsive" id="logoFestivalImg"/>
+				{% elif current_module == "banda" %}
+					<img src="{% static "banda/images/banda_banniere.svg" %}" class="img-responsive"/>
+					<img src="{% static "banda/images/bandaTchitchAaAa.svg" %}" class="img-responsive" id="logoTchitchaImg"/>
+				{% endif %}
 			</div>			
 				
         		{% if current_module == "festival" %}							  
