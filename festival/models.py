@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.conf.global_settings import AUTH_USER_MODEL
 
 class Groupe(models.Model):
     nom = models.CharField(max_length = 50)
@@ -38,7 +38,7 @@ class Festival(models.Model):
     evenements = models.ManyToManyField(Evenement)
     activites = models.ManyToManyField(Activite, blank = True)
     date_creation = models.DateTimeField(auto_now_add = True, blank = True)
-    historise = models.BooleanField()
+    historise = models.BooleanField(default=False)
     def __str__(self):
         return self.nom
 
@@ -117,7 +117,7 @@ class Article(models.Model):
     titre = models.CharField(max_length = 64)
     contenu = models.TextField()
     date = models.DateTimeField(auto_now = True)
-    auteur = models.ForeignKey(get_user_model())
+    auteur = models.ForeignKey(AUTH_USER_MODEL)
     
     def __str__(self):
         return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre

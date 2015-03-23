@@ -2,7 +2,7 @@
 
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from banda.models import Lien, Article, Media, Membre, Music
+from banda.models import Lien, Article, Media, Membre, Music, DateEvenement
 from banda.forms import ContactForm
 import soundcloud
 
@@ -55,7 +55,7 @@ def trombi(request):
     return render_to_response('banda/trombi.html', RequestContext(request, retour))
 
 def calendrier_sorties(request):
-    return render_to_response('banda/', RequestContext(request))
+    return render_to_response('banda/calendrier.html', RequestContext(request, {'dates' : DateEvenement.objects.all()}))
 
 def medias(request):
     medias = Media.objects.all()

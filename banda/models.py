@@ -1,14 +1,13 @@
 
 from django.db import models
 from festival.models import Contact
-from django.contrib.auth import get_user_model
-
+from django.conf.global_settings import AUTH_USER_MODEL
 
 class Article(models.Model):
     titre = models.CharField(max_length = 64)
     contenu = models.TextField()
     date = models.DateTimeField(auto_now = True)
-    auteur = models.ForeignKey(get_user_model(), related_name='auteur_banda')
+    auteur = models.ForeignKey(AUTH_USER_MODEL, related_name='auteur_banda')
     
     def __str__(self):
         return self.titre[:15]+'..' if len(self.titre) > 15 else self.titre
@@ -69,15 +68,16 @@ class Membre(models.Model):
     instrument = models.CharField(max_length=50)
     blabla = models.TextField(blank=True)
     type = models.CharField(choices=TYPE_MEMBRE, max_length=1)
-    afficher = models.BooleanField()
+    afficher = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.type.upper() + ' - ' + self.prenom + ' ' + self.nom + '(' + self.instrument + ')')
 
 class DateEvenement(models.Model):
-    nom = models.CharField(max_length=50)
+    quoi = models.CharField(max_length=50)
+    ou = models.CharField(max_length=50)
+    quand = models.DateTimeField()
     description = models.CharField(max_length = 200,blank = True)
-    date = models.DateTimeField()
 
 class Music(models.Model):
     titre = models.CharField(max_length=50)

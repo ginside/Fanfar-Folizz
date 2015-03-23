@@ -1,7 +1,7 @@
 [
 {
     "pk": 1, 
-    "model": "auth.user", 
+    "model": "auth.User", 
     "fields": {
         "username": "fanfar", 
         "first_name": "", 
@@ -19,7 +19,7 @@
 },
 {
     "pk": 2, 
-    "model": "auth.user", 
+    "model": "auth.User", 
     "fields": {
         "username": "dada", 
         "first_name": "daniel", 
@@ -37,7 +37,7 @@
 },
 {
     "pk": 3, 
-    "model": "auth.user", 
+    "model": "auth.User", 
     "fields": {
         "username": "eric", 
         "first_name": "eric", 
@@ -581,6 +581,36 @@
     "fields": {
         "titre": "mix", 
         "lien": "https://soundcloud.com/daniel-francois/kaptains-weirdest-1"
+    }
+},
+{
+    "pk": 1, 
+    "model": "banda.DateEvenement", 
+    "fields": {
+        "quoi": "concert",
+        "quand": "2015-06-20T14:00:00Z",
+        "ou" : "Nogent-Le-Rotrou",
+        "description" : "un super concert de fou!" 
+    }
+},
+{
+    "pk": 2, 
+    "model": "banda.DateEvenement", 
+    "fields": {
+        "quoi": "concert",
+        "quand": "2015-06-22T14:00:00Z",
+        "ou" : "Nogent-Le-Rotrou",
+        "description" : "un super concert de fou!" 
+    }
+},
+{
+    "pk": 3, 
+    "model": "banda.DateEvenement", 
+    "fields": {
+        "quoi": "concert",
+        "quand": "2015-12-24T23:00:00Z",
+        "ou" : "Nogent-Le-Rotrou",
+        "description" : "un super concert de fou!" 
     }
 }
 ]

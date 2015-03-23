@@ -139,7 +139,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    #'django.contrib.admin',
+    'django.contrib.admin.apps.SimpleAdminConfig',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # fanfar-folizzz festival website
@@ -155,7 +156,7 @@ INSTALLED_APPS = (
 STATIC_URL = BASE_URL + '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
 
-
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 CACHES = {
     'default': {
