@@ -9,9 +9,6 @@
 
 {% block titre %}Contact{% endblock titre %}
 {% block contenu %}
-<pre>
-    {{ current_module }}
-</pre>
     {% if contact_form.is_valid %}
         <div class="thanks">Merci pour votre demande, on vous répondra vite!</div>
     {% else %}
