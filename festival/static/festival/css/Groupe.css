@@ -1,11 +1,13 @@
 .groupe {
-float:left;
-width:100%;
-margin-bottom: 10px;
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+	min-height: 300px;
 }
+
 #groupes {
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 }
 
 .div_nom_groupe {
@@ -17,17 +19,17 @@ margin-bottom: 10px;
 }
 
 .div_nom_groupe a:hover {
-  color: 	#2152A4;
+	color: #2152A4;
 }
 
 .nom_groupe {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .origine_groupe {
 	float: right;
 	padding-right: 10px;
-	font-style:italic;
+	font-style: italic;
 	background-color: #F7AA1E;
 	width: 300px;
 	text-align: right;
@@ -36,12 +38,12 @@ margin-bottom: 10px;
 #groupes_gauche {
 	float: left;
 }
+
 #groupes_droite {
-  float: left;
+	float: left;
 }
 
-#groupes_droite,
-#groupes_gauche {
-  width:50%;
-  height:100%;
+#groupes_droite, #groupes_gauche {
+	width: 50%;
+	height: 100%;
 }

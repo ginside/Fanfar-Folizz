@@ -8,17 +8,23 @@
   background-color: #F7AA1E;
 }
 .video{
-  margin: 4px 8.5px 0px 0px;
+  margin: 4px 0px;
 }
 .image{
 	margin: 4px 4px 0px 0px;
-  width:150px;
+  width:150px; 
+  	min-height:108px;
+}
+.image img {
+	
+	margin: 4px auto 0px ;
+	  display: block;
 }
 
 .modal-body img {
 	margin: auto;
 }
-#imageModal .modal-footer{
+#imageModal .modal-footer {
 	text-align: center;
 	padding: 0px 0px 5px;
 	border-top: none;

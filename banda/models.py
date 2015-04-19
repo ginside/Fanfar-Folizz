@@ -40,16 +40,19 @@ class Media(models.Model):
                 self.code = self.adresse
             if src:    #width="380" height="285"
                 self.code = '<iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video_frame" style="height:250px" src="'+ src +'"     frameborder="0" allowfullscreen></iframe>'
-        
-        elif len(self.fichier):
-            extension = str(self.fichier).split(".")[-1]
-            # le média est une image
-            if extension in ['jpg','png','jpeg','gif','bmp']:
-                self.type = "image"
-                
-            # le média est un pdf
-            elif extension == 'pdf':
-                self.type = extension
+        try:        
+            if len(self.fichier):
+                extension = str(self.fichier).split(".")[-1]
+                # le média est une image
+                if extension in ['jpg','png','jpeg','gif','bmp']:
+                    self.type = "image"
+                    
+                # le média est un pdf
+                elif extension == 'pdf':
+                    self.type = extension
+        except FileNotFoundError:
+            return False
+        return True
 
 class Lien(models.Model):
     adresse = models.URLField()

@@ -6,11 +6,17 @@
     {% if current_module == "festival" %}
     	<link href="{% static "festival/css/Media.css" %}" rel="stylesheet" type="text/css"/>
     {% elif current_module == "banda" %}
-    	<!-- TODO -->
+    	<link href="{% static "festival/css/Media.css" %}" rel="stylesheet" type="text/css"/>
     {% endif %}
 {% endblock css %}
 
-{%block titre %}Medias{%endblock titre %}
+{%block titre %}
+    {% if current_module == "festival" %}
+    	Les fanfar'folizz en images!
+    {% elif current_module == "banda" %}
+		La banda en action!
+    {% endif %}
+{%endblock titre %}
 
 {%block contenu %}
 
@@ -27,6 +33,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- end Modal -->
 	<div class="container row">
 		<div id="videos_grid" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			{% for media in medias %}
@@ -55,7 +62,7 @@
 		</div>
 		<div id="docs_grid" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h2>Autres documents</h2>
+				<h2>Autres..</h2>
 					{% for media in medias %}
 						{% if media.type == "pdf" %}
 			                <a href="{{ media.fichier.url }}" target = "_blank"> <span class="glyphicon glyphicon-file"></span>{{ media.nom|capfirst }}</a>

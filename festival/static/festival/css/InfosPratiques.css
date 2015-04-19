@@ -1,6 +1,9 @@
-
+.infos_pratiques #map-canvas-1{
+	display: block;
+	margin: 10px auto;
+}
 .infos_pratiques_texte {
-	margin-top:  10px;
+	margin:  10px 50px 0px;
 	display:     block;
 	word-wrap:   break-word;
 }

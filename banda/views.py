@@ -58,9 +58,10 @@ def calendrier_sorties(request):
     return render_to_response('banda/', RequestContext(request))
 
 def medias(request):
-    medias = Media.objects.all()
-    for media in medias:
-        media.display()
-        
+    medias = []
+    for media in Media.objects.all():
+        if media.display():
+            medias.append(media)
+    
     return render_to_response('festival/medias.html', RequestContext(request, {'medias': medias}))
     

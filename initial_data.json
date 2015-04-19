@@ -416,6 +416,16 @@
     }
 },
 {
+    "pk": 21, 
+    "model": "festival.media", 
+    "fields": {
+        "festival": 2, 
+        "nom": "BWBB", 
+        "adresse": "https://www.youtube.com/watch?v=mwM9kEnnZM8"
+    }
+},
+
+{
     "pk": 200, 
     "model": "festival.media", 
     "fields": {
@@ -552,6 +562,84 @@
     }
 },
 {
+    "pk": 4,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Tchitcha",
+        "prenom" : "Eric",
+        "photo" : "images/membres/Eric.jpg",
+        "instrument" : "trombonne",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "f",
+        "afficher" : "True"
+   	}
+},
+{
+    "pk": 5,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Bret",
+        "prenom" : "Florian",
+        "photo" : "images/membres/Mr_peanut_butter.JPG",
+        "instrument" : "djembé",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
+    "pk": 6,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Francois",
+        "prenom" : "Daniel",
+        "photo" : "images/membres/didgeridoo.gif",
+        "instrument" : "didgeridoo",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
+    "pk": 7,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Tchitcha",
+        "prenom" : "Eric",
+        "photo" : "images/membres/Eric.jpg",
+        "instrument" : "trombonne",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "f",
+        "afficher" : "True"
+   	}
+},
+{
+    "pk": 8,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Bret",
+        "prenom" : "Florian",
+        "photo" : "images/membres/Mr_peanut_butter.JPG",
+        "instrument" : "djembé",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
+    "pk": 9,
+    "model": "banda.membre",
+    "fields": {
+        "nom": "Francois",
+        "prenom" : "Daniel",
+        "photo" : "images/membres/didgeridoo.gif",
+        "instrument" : "didgeridoo",
+        "blabla" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard ",
+        "type" : "t",
+        "afficher" : "True"
+    }
+},
+{
     "pk": 1, 
     "model": "banda.lien", 
     "fields": {
@@ -581,6 +669,222 @@
     "fields": {
         "titre": "mix", 
         "lien": "https://soundcloud.com/daniel-francois/kaptains-weirdest-1"
+    }
+},
+{
+    "pk": 1, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/1012352_10201007076755374_522884714_n.jpg"
+    }
+},
+{
+    "pk": 2, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/10354595_10204029122874128_3583948650978620269_n.jpg"
+    }
+},
+{
+    "pk": 3, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/10366055_10204029123314139_2838748457854439899_n.jpg"
+    }
+},
+{
+    "pk": 4, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/10387481_10204029125234187_5010218179969971989_n.jpg"
+    }
+},
+{
+    "pk": 5, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/1044609_10201007047954654_1897674506_n.jpg"
+    }
+},
+{
+    "pk": 6, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/10489839_10204029127794251_297579960158356634_n.jpg"
+    }
+},
+{
+    "pk": 7, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/1049132_10200951078875462_1220842964_o.jpg"
+    }
+},
+{
+    "pk": 8, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/10505604_10204029119154035_72766628137694953_n.jpg"
+    }
+},
+{
+    "pk": 9, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/185872_513084835371606_1848820661_n.jpg"
+    }
+},
+{
+    "pk": 10, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/226221_513080805372009_1942276802_n.jpg"
+    }
+},
+{
+    "pk": 11, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/313526_513084922038264_134504524_n.jpg"
+    }
+},
+{
+    "pk": 12, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/313944_4485668466758_1454996935_n.jpg"
+    }
+},
+{
+    "pk": 13, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/376307_510250225655067_1719460066_n.jpg"
+    }
+},
+{
+    "pk": 14, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/391408_513085215371568_1679913964_n.jpg"
+    }
+},
+{
+    "pk": 15, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/418304_513080535372036_1310755247_n.jpg"
+    }
+},
+{
+    "pk": 16, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/423493_513085402038216_1086490957_n.jpg"
+    }
+},
+{
+    "pk": 17, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/432154_513084952038261_1732670327_n.jpg"
+    }
+},
+{
+    "pk": 18, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/480328_513080625372027_1651472100_n.jpg"
+    }
+},
+{
+    "pk": 19, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/483988_513085082038248_28758050_n.jpg"
+    }
+},
+{
+    "pk": 20, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/531728_510258682320888_189259077_n.jpg"
+    }
+},
+{
+    "pk": 21, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/533099_513084238704999_1927073559_n.jpg"
+    }
+},
+{
+    "pk": 22, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/533185_513080772038679_892595687_n.jpg"
+    }
+},
+{
+    "pk": 23, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/580795_513085272038229_208566824_n.jpg"
+    }
+},
+{
+    "pk": 24, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/971493_10201007050434716_985993523_n.jpg"
+    }
+},
+{
+    "pk": 25, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/993894_10201007048834676_1898474099_n.jpg"
+    }
+},
+{
+    "pk": 27, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/1010913_10200951084715608_482427666_n.jpg"
+    }
+},
+{
+    "pk": 26, 
+    "model": "banda.media", 
+    "fields": {
+        "nom": "Image",
+        "fichier": "images/1011338_10201007044594570_91593541_n (1).jpg"
     }
 }
 ]

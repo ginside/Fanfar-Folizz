@@ -22,9 +22,13 @@ def thumbnail(my_file, size='150x150'):
     if os.path.exists(miniature_filename) and os.path.getmtime(filename) > os.path.getmtime(miniature_filename):
         os.unlink(miniature_filename)
     # if the image wasn't already resized, resize it
-    if not os.path.exists(miniature_filename):
+    if 1 or not os.path.exists(miniature_filename):
         image = Image.open(filename)
         image.thumbnail([x, y], Image.ANTIALIAS)
+        (width,height) = image.size
+        if height > 100:
+            crop_size = int((height - 100) / 2)
+            image = image.crop((0,crop_size,width,height - crop_size))
         try:
             image.save(miniature_filename, image.format, quality=90, optimize=1)
         except:

@@ -1,12 +1,19 @@
 {% extends "festival/__l_simple.html" %}
 {% load festival_extras staticfiles %}
+{% block css %}
+    {{ block.super }}
+    <link href="{% static "banda/css/Trombi.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
 {% block contenu %}
 	{% for membre in membres %}
 		<div class="groupes_col col-lg-3 col-md-6 col-sm-6 col-xs-12">
 			<div class = "groupe">
 				<div class ="div_nom_groupe">
 				    <span class="nom_groupe">
-						{{membre.prenom}} {{membre.instrument}}
+						{{membre.prenom}} 
+			        </span>
+			        <span class="origine_groupe">
+			        	{{membre.instrument}}
 			        </span>
 			        <br>
 			    </div>
