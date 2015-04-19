@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 {% load staticfiles %}
 
 <html>
@@ -16,6 +16,9 @@
 		 <a href="{% url 'banda.views.accueil' %}">La Banda Tchitchaaa</a> 
 		 <a href="{% url 'festival.views.accueil' %}">Les Fanfar'Folizzz</a> 
 	</div>
-	   <div id="footer">{% now "d m y" %} <a href="http://tripledash.free.fr/">Forum</a> <a href="{% url 'festival.views.contact' %}">Contactez-nous!</a></div>
+	   <div id="footer">{% now "d m y" %} 
+	   	<a href="http://tripledash.free.fr/">Forum</a> 
+	   	<a href="{% url 'festival.views.contact' %}">Contactez-nous!</a>
+	   </div>
 	</body>
 </html>
