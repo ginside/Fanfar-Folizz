@@ -13,7 +13,7 @@ BASE_URL = ''
 if 'FANFAR_BASE_URL' in os.environ.keys():
     BASE_URL = os.environ['FANFAR_BASE_URL']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.fanfarfolizzztchitchaaa.fr']
 
 APP_ENV = 'production'
 if PROJECT_ROOT.find("workspace") != -1 or sys.platform == "win32":

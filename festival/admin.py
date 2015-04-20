@@ -32,16 +32,15 @@ class ArticleAdmin(admin.ModelAdmin):
     fields = ['titre','contenu']
     def save_model(self, request, obj, form, change):
         instance = form.save(commit=False)
-        if not hasattr(instance,'auteur'):
-            instance.auteur = request.user
+        instance.auteur = request.user
         instance.save()
         form.save_m2m()
         return instance
 
     def save_formset(self, request, form, formset, change): 
         def set_user(instance):
-            if not instance.auteur:
-                instance.auteur = request.user
+            instance.auteur = request.user
+            print(instance.auteur)
             instance.save()
         if formset.model == Article:
             instances = formset.save(commit=False)
