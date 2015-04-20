@@ -40,7 +40,6 @@ class ArticleAdmin(admin.ModelAdmin):
     def save_formset(self, request, form, formset, change): 
         def set_user(instance):
             instance.auteur = request.user
-            print(instance.auteur)
             instance.save()
         if formset.model == Article:
             instances = formset.save(commit=False)
