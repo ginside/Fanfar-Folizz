@@ -23,6 +23,14 @@ class Media(models.Model):
     adresse = models.URLField(blank = True)
     fichier = models.FileField(upload_to = "files/",blank = True)
     
+    def image_tag(self):
+        if self.adresse or self.fichier.name[-3:] == "pdf" :
+            return '<a href="self' + self.adresse + '">'+self.adresse+'</a>'
+        return u'<img src="%s" style="max-width:320px"/>' % self.fichier.url
+        return ""
+    image_tag.short_description = 'Aperçu'
+    image_tag.allow_tags = True
+    
     def display(self):
         # if isinstance(media.festival,Festival):
         #     if media.festival.id == dernier_festival.id:

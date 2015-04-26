@@ -26,7 +26,10 @@ class LienAdmin(admin.ModelAdmin):
     fields = ['adresse','description']
     
 class MediaAdmin(admin.ModelAdmin):
-    fields = ['nom','adresse','fichier','festival']
+    fields = ['nom','adresse','fichier','festival','image_tag']
+    readonly_fields = ('image_tag',)
+    list_display = ('nom', 'image_tag')
+    
     
 class ArticleAdmin(admin.ModelAdmin):
     fields = ['titre','contenu']

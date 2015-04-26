@@ -6,7 +6,9 @@ class LienAdmin(admin.ModelAdmin):
     fields = ['adresse','description']
 
 class MediaAdmin(admin.ModelAdmin):
-    fields = ['nom','adresse','fichier']
+    fields = ['nom','adresse','fichier','image_tag']
+    readonly_fields = ('image_tag',)
+    list_display = ('nom', 'image_tag')
 
 class MembreAdmin(admin.ModelAdmin):
     fields = ['nom','prenom','photo','instrument','blabla','type','afficher']
