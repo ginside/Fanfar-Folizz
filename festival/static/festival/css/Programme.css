@@ -22,7 +22,7 @@
 .programme_activite {
   font-size: large;
 	width: 100%;
-	height: 200px;
+	height: 220px;
 	margin: 0px 0px 10px;
 	position: relative;
 }
@@ -71,10 +71,14 @@
   height: 170px;
   margin-bottom: 4px;
 }
-.concert {
+.concert,
+.concert_footer {
   background-color: #F7AA1E;
 }
-
+.activite_footer,
+.concert_footer {
+	height: 14px; 
+}
 .programme_evenement_detail a {
 }
 
@@ -88,6 +92,7 @@
 }
 /* ACTIVITE */
 
+.activite_footer,
 .activite {
   background-color: #76D4C4;
 }
