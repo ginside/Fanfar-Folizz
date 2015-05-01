@@ -15,8 +15,18 @@ class MembreAdmin(admin.ModelAdmin):
     
 class MusicAdmin(admin.ModelAdmin):
     fields = ['titre','lien','partoche']
-
+    
+class ArticleAdmin(admin.ModelAdmin):
+    fields = ['titre','contenu']
+    def save_model(self, request, obj, form, change):
+        instance = form.save(commit=False)
+        instance.auteur = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+    
 admin.site.register(Lien, LienAdmin)
 admin.site.register(Media, MediaAdmin)
 admin.site.register(Membre, MembreAdmin)
 admin.site.register(Music, MusicAdmin)
+admin.site.register(Article, ArticleAdmin)
